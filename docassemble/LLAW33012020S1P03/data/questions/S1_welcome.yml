@@ -1,5 +1,11 @@
 ---
-Mandatory: True 
+include:
+  - ASSIGNMENT_01_main_endpoints.yml
+  - ASSIGNMENT_02_questions_initial.yml
+  - ASSIGNMENT_03_questions_public.yml
+  - ASSIGNMENT_04_code.yml
+---
+mandatory: True 
 question: Welcome!
 subquestion: | 
   Welcome to the Equal Opportunity Commission Disability Report Alert 
@@ -26,7 +32,7 @@ buttons:
     url: https://eoc.sa.gov.au
   - I wish to continue: continue 
 ---
-Mandatory: True
+mandatory: True
 question: Important
 subquestion: | 
   **DISCLAIMER: THIS SERVICE IS NOT TO BE TAKEN AS FORMAL LEGAL ADVICE** 

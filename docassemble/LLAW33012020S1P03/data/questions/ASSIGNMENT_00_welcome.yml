@@ -1,0 +1,69 @@
+---
+include:
+  - ASSIGNMENT_01_main_endpoints.yml
+  - ASSIGNMENT_02_questions_initial.yml
+  - ASSIGNMENT_03_questions_public.yml
+---
+mandatory: True 
+question: Welcome,
+subquestion: | 
+  **Welcome to the Equal Opportunity Commission's** 
+  **Disability Access Report** (fix wording)
+  
+    This program has been designed so that you may easily and anonymously
+    report your experience of an accessibility issue directly to the venue
+    in question. 
+
+
+  **This service will assist you to:**
+  
+   - 	Submit a report notifying venues of their obligations to provide disability access,
+   
+   - 	Download a PDF copy of this report,
+   
+   -	View relevant legal information regarding your rights to access as per the current law in South Australia, and
+   - View information detailing the obligations of venues under the disability access laws found in *The Equal Opportunity Act 1984 (SA)*.
+  
+buttons: 
+  - Next: continue 
+  - Exit: exit
+    url: https://eoc.sa.gov.au
+---
+mandatory: True 
+question:  Welcome, 
+subquestion: | 
+  ***Disclaimer:***  
+ 
+  **This service is not to be taken as a subsitute to formal legal advice** 
+  
+   The automated access report you may choose submit is also *not the same as a formal complaint* submitted to the Equal Opportunity Commission. 
+    
+  If you wish instead to make a formal complaint to the Equal Opportunity Commission, please click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to the the online complaint service. 
+ 
+buttons: 
+  - I accept and wish to continue: continue 
+  - Exit: exit
+    url: https://eoc.sa.gov.au
+---
+
+---
+objects:
+  - endpoint: DADict
+---
+# This code block drives public requests. It determines whether member
+# of public wants to complain OR whether they just want information 
+# If want to complain, directs user to 'eligible' endpoint. Otherwise, directs 
+# to 'ineligible' endpoint.  
+# Note: This code block must be mandatory
+mandatory: True
+code: |
+  if who_is_user == 'user_is_venue':
+    endpoint['endpoint_1']
+  elif who_is_user == 'user_is_public':
+    if purpose == 'req_informal_complaint':
+      endpoint['eligible']
+    elif purpose == 'req_public_info':
+      endpoint['ineligible'] 
+    else:
+      endpoint['link_page']
+---

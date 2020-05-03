@@ -1,9 +1,18 @@
+---
+question: Details of the User 
+subquestion: |
+  Why are you accessing this service? 
+field: who_is_user
+choices:
+  - I am a member of the public/acting on behalf of a member of public: user_is_public
+  - I am a venue owner/agency/employee: user_is_venue
+  
+---
 # If chose "member of public", has to chose information or complaint
 # question block asks the questions to drive code block 'purpose'.
 
 #NEED: how to get "help" icons to LHS/ have text displayed off text
 #UNFINISHED
-
 question: Purpose of visit to site
 subquestion: |
   **For which reason are you accessing this service?**

@@ -1,4 +1,11 @@
 ---
+# endpoint for venues recieving information 
+# UNFINISHED
+event: endpoint['endpoint_1']
+question: Purpose of visit to site
+subquestion: |
+  **VENUE INFORMATION GOES HERE**
+---
 # This is the endpoint for making an access alert/ generated complaint form
 # UNFINISHED
 event: endpoint['eligible']

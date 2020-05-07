@@ -104,7 +104,14 @@ fields:
 #"what happened"
 # 1) I was not permitted entry/ was unable to enter: could_not_enter
 # 2) I experienced access issues once inside the venue: issue_once_inside
-
+question: Nature of incident
+subquestion: |
+ Which category does the nature of the incident fall under?
+fields: 
+ - Please select which category applies so we can understand the incident: incident_type
+   choices: 
+   - I was unable to enter the premises: could_not_enter
+   - I experienced accessibility issue(s) once inside the premises: issue_once_inside
 ---
 # DOCUMENT QUESTIONAIRE PART 6
 # Specifics of Access Issue: what type of access issue did you experience?

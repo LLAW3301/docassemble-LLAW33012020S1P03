@@ -21,6 +21,12 @@ subquestion: |
 
   Complaint made regarding ${ target_venue }.
 
+  %if incident_type == 'could_not_enter':
+  The complainant could not enter the building 
+  %elif incident_type == 'issue_once_inside':
+  The complainant encounteres an issue once inside
+  %endif
+
 buttons:
  - Finish: exit
    url: https://eoc.sa.gov.au/

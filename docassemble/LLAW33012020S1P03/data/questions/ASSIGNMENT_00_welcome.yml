@@ -1,3 +1,4 @@
+# Testing push to Github
 ---
 include:
   - ASSIGNMENT_01_main_endpoints.yml
@@ -11,17 +12,18 @@ subquestion: |
   **Disability Access Report** (fix wording)
   
     This program has been designed so that you may easily and anonymously
-    report your experience of an accessibility issue directly to the venue
+    report your experience of an accessibility issue, directly to the venue
     in question. 
 
 
   **This service will assist you to:**
   
-   - 	Submit a report notifying venues of their obligations to provide disability access,
+   - 	Submit a report to notify venues they have legal obligations to provide  access for disabilities,
    
    - 	Download a PDF copy of this report,
    
-   -	View relevant legal information regarding your rights to access as per the current law in South Australia, and
+   -	View relevant legal information regarding **your** rights to access as per the current law in South Australia, and
+   
    - View information detailing the obligations of venues under the disability access laws found in *The Equal Opportunity Act 1984 (SA)*.
   
 buttons: 
@@ -44,8 +46,6 @@ buttons:
   - I accept and wish to continue: continue 
   - Exit: exit
     url: https://eoc.sa.gov.au
----
-
 ---
 objects:
   - endpoint: DADict

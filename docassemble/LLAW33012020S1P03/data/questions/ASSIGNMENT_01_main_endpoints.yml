@@ -13,21 +13,47 @@ question: Here is your document.
 subquestion: |
   #### Hello ${ public_salutation +' '+ public_lastname },  
   
+  Q2: 
   %if position_of_complainant == 'For myself':
   This complaint has been brought by ${ public_salutation +' '+ public_lastname } on behalf of themselves. 
   %elif position_of_complainant == 'On behalf of someone else':
   This complaint has been brought by ${ public_salutation +' '+ public_lastname } on behalf of another. 
   %endif
 
-  Complaint made regarding ${ target_venue }.
+  Q3: Complaint made regarding ${ target_venue }.
 
+  Q4: The individual lives with.... disability rq. here 
+  ${ rel_disabilities }
+
+  Q5: 
+  %if incident_type == 'could_not_enter':
+  The complainant could not enter the building 
+  %elif incident_type == 'issue_once_inside':
+  The complainant encounteres an issue once inside
+  %endif
+
+  Q6:
+  General details of Accessibility Issue=
+  * ${ access_issue_general }
+  
+  Q7:
+  Specific details of Accessibility Issue=
+  * ${ access_issue_specific }
+  
+  Q8: 
+  The user of this service 
+  %if name_use == 'name_attatched':
+  wishes to attatch their last name to this letter
+  %elif name_use == 'name_anonymous':  
+  will remain completely anonymous in this letter
+  %endif 
+  
 buttons:
  - Finish: exit
    url: https://eoc.sa.gov.au/
  - Restart form: restart
 ---
 # This is the information endpoint for the public (?)
-
 # It will be displayed on this screen in a drop down menu, AND 
 # at the bottom will be a downloadable PDF copy with option to email 
 

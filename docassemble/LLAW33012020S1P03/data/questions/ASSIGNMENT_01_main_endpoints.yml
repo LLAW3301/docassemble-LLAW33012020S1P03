@@ -22,19 +22,48 @@ subquestion: |
 
   Q3: Complaint made regarding ${ target_venue }. ${ target_email }
 
-  Q4: The individual lives with.... disability rq. here 
-  ${ rel_disabilities }
-
+  Q4: The individual lives with the following disabiltiies:   
+  % if rel_disabilities['Visual']:
+  * Visual disability
+  % endif
+  % if rel_disabilities['Auditory']:
+  * Auditory disability
+  % endif
+  % if rel_disabilities['Physical']:
+  * Physical disability
+  % endif
+  % if rel_disabilities['Mental']:
+  * Mental disability
+  % endif
+ 
+  
   Q5: 
   %if incident_type == 'could_not_enter':
   The complainant could not enter the building 
   %elif incident_type == 'issue_once_inside':
   The complainant encounteres an issue once inside
   %endif
-
+  
+  
+  
   Q6:
-  General details of Accessibility Issue=
-  * ${ access_issue_general }
+  General details of Accessibility Issue= This was...
+  % if access_issue_general['Physical access']:
+  an issue with physical access
+  % endif
+  % if access_issue_general['Visual assistance']:
+  a lack of visual assistance
+  % endif
+  % if access_issue_general['Auditory assistance']:
+  a lack of auditory assistance
+  % endif
+  % if access_issue_general['General discriminatory attitude']:
+  the occurence of general discriminatory attitude
+  % endif
+
+
+
+  
   
   Q7:
   Specific details of Accessibility Issue=

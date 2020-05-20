@@ -6,7 +6,7 @@ question: Purpose of visit to site
 subquestion: |
   **VENUE INFORMATION GOES HERE**
 ---
-# This is the endpoint for making an access alert/ generated complaint form
+# This is the endpoint for the questionnaire/ access alert
 # UNFINISHED
 event: endpoint['eligible']
 question: Here is your document.
@@ -20,7 +20,7 @@ subquestion: |
   This complaint has been brought by ${ public_salutation +' '+ public_lastname } on behalf of another. 
   %endif
 
-  Q3: Complaint made regarding ${ target_venue }.
+  Q3: Complaint made regarding ${ target_venue }. ${ target_email }
 
   Q4: The individual lives with.... disability rq. here 
   ${ rel_disabilities }

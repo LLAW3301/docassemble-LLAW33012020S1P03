@@ -1,4 +1,3 @@
----
 # DOCUMENT QUESTIONAIRE PART 1
 # NEED: to inform that "mx" is gender neutral??
 # NEED: find coherent/ easy to understand "question" title???
@@ -43,47 +42,28 @@ fields:
    - On behalf of someone else
 back button: True
 ---
-# DOCUMENT QUESTIONAIRE PART 3 (1/1)
-#NEED: is location_known() an option? or are we free texting it 
+# DOCUMENT QUESTIONAIRE PART 3
 #NEED: less adversarial wording
 # UNFINISHED
 
 question: Creating your Disability Access Letter
 subquestion: |
-  Who are you making this acces alert against?
+  Who do you wish to contact about this access issue?
+  
+  *This should be the name and email of the venue or premises where*
+   *you felt there was insufficient access based on your disability.*
+   
 fields:
   - Name of the relevant venue: target_venue
   - note: |
-      This can be easily searched up on google. 
-      Please use most recognisable name blah blah... 
-      Please use capitals for each word.
-      (You will later need to submit email 
-      address as advertised online by this venue.
-back button: True
----
-# DOCUMENT QUESTIONAIRE PART 3 (2/2): might NOT need this???
+      *It is advised that you use the full name of the relevant venue or*
+      *premises, as well as their current email address*
+      
+      *This can be easily searched up on the internet.*
 
-# UNFINISHED
-question: Creating your Disability Access Letter
-subquestion: |
-  Who are you making this complaint against?  
-  What type of venue is this complaint about?
-fields:
-  - Type of venue: venue_type
-    choices:
-    - A
-    - B
-    - C
-    - D
-    - E
-    - F 
-  - note: |
-      EXPLANATION of what constitutes:
-      A:
-      B:
-      C:
-      D:
-     
+# NEED: grammar caps?       
+  - E-mail: target_email
+    datatype: email
 back button: True
 ---
 # DOCUMENT QUESTIONAIRE PART 4
@@ -254,7 +234,6 @@ back button: True
 
 # table: summary of quesiton blocks 
 # UNFINISHED
-
 ---
 # DOCUMENT QUESTIONAIRE PART 10:
 # final page before endpoint. checking to see if understand
@@ -284,8 +263,8 @@ subquestion: |
   
 back button: True
 buttons: 
-  - I agree so send this letter by clicking this button: continue
-  - OR, I wish to restart this service: restart
-  - OR, I wish to exit this service: exit
+  - I agree: continue
+  - I wish to restart: restart
+  - I wish to exit: exit
 ---
 

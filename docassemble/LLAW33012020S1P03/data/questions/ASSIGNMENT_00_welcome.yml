@@ -1,4 +1,14 @@
-# Testing push to Github
+---
+# Testing: features
+features:
+  progress bar: True
+  show progress bar percentage: True
+  navigation: True
+  hide standard menu: True
+# is this last one necessary???
+---
+features:
+  bootstrap theme: lumen.min.css
 ---
 include:
   - ASSIGNMENT_01_main_endpoints.yml
@@ -25,7 +35,15 @@ subquestion: |
    -	View relevant legal information regarding **your** rights to access as per the current law in South Australia, and
    
    - View information detailing the obligations of venues under the disability access laws found in *The Equal Opportunity Act 1984 (SA)*.
-  
+
+css: |
+  <style>
+    body {
+      background-image: url();
+      background-repeat: repeat;
+    }
+  </style>
+
 buttons: 
   - Next: continue 
   - Exit: exit

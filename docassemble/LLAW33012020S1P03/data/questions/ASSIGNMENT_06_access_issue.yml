@@ -1,0 +1,33 @@
+--- 
+mandatory: True 
+question: Details of Accessibility Issue  
+subquestion: |
+  What type of access issue have you encountered at (venue)?  
+fields: 
+  - Please give as much detail as you can: access_issue
+    input type: area 
+  
+
+---
+mandatory: True 
+question: Venue Discrimination 
+subquestion: | 
+  How did the venue fail to provide adequate access? 
+fields: 
+  - Please give as much detail as you can: venue_issue
+    input type: area 
+  
+--- 
+mandatory: True 
+question: Confidentiality 
+subquestion: | 
+  Would you like your name to be attached or remain anonymous? 
+buttons: 
+ - Attach name  
+ - Remain anonymous 
+ 
+continue: continue 
+Exit: Exit 
+---
+ 
+  

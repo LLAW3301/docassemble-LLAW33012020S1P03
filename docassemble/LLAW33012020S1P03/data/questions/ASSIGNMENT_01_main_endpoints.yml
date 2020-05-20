@@ -13,41 +13,66 @@ question: Here is your document.
 subquestion: |
   #### Hello ${ public_salutation +' '+ public_lastname },  
   
-  Q2: 
+  ${ publicquestion_table } 
+  --> GET RID OF
+
+
+ 
   %if position_of_complainant == 'For myself':
-  This complaint has been brought by ${ public_salutation +' '+ public_lastname } on behalf of themselves. 
+  This access issue has been addressed by ${ public_salutation +' '+ public_lastname } on behalf of themselves. 
   %elif position_of_complainant == 'On behalf of someone else':
-  This complaint has been brought by ${ public_salutation +' '+ public_lastname } on behalf of another. 
+  This access issue has been addressed by ${ public_salutation +' '+ public_lastname } on behalf of another. 
   %endif
 
-  Q3: Complaint made regarding ${ target_venue }. ${ target_email }
+  **Relevant Venue:**
+  
+  The venue that this issue is about is ${ target_venue } (${ target_email }).
 
-  Q4: The individual lives with the following disabiltiies:   
+
+  **FIX THIS PART WITH IFs**
+  The individual lives with the following disabiltiies:   
   % if rel_disabilities['Visual']:
+  
   * Visual disability
+  
   % endif
   % if rel_disabilities['Auditory']:
+  
   * Auditory disability
+  
   % endif
   % if rel_disabilities['Physical']:
+  
   * Physical disability
+  
   % endif
   % if rel_disabilities['Mental']:
+  
   * Mental disability
+  
   % endif
  
   
-  Q5: 
-  %if incident_type == 'could_not_enter':
-  The complainant could not enter the building 
+  **Because of difficulties regarding a disabiltity:**
+  %if incident_type == 'could_not_enter': 
+    %if position_of_complainant == 'For myself':
+    I could not enter the building
+    %elif position_of_complainant == 'On behalf of someone else':
+    The individual could not enter the building
+    %endif
   %elif incident_type == 'issue_once_inside':
-  The complainant encounteres an issue once inside
+    %if position_of_complainant == 'For myself':
+    I encountered an issue once inside
+    %elif position_of_complainant == 'On behalf of someone else':
+    The individual encountered an issue once inside
+    %endif
   %endif
   
+
   
   
-  Q6:
-  General details of Accessibility Issue= This was...
+ 
+  According to you, this was 
   % if access_issue_general['Physical access']:
   an issue with physical access
   % endif
@@ -62,15 +87,16 @@ subquestion: |
   % endif
 
 
-
+  **Personal Account:**
   
+  When asked to give detail about the specific issue which occured, you said the following:
+  "${ access_issue_specific }"
   
-  Q7:
-  Specific details of Accessibility Issue=
-  * ${ access_issue_specific }
+ 
+ 
+  **Confidentiality:**
   
-  Q8: 
-  The user of this service 
+  The user of this service
   %if name_use == 'name_attatched':
   wishes to attatch their last name to this letter
   %elif name_use == 'name_anonymous':  

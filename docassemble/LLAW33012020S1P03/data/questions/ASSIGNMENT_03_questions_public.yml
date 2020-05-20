@@ -234,6 +234,65 @@ back button: True
 
 # table: summary of quesiton blocks 
 # UNFINISHED
+
+variable name: publicperson_info
+use objects: True
+data:
+  - category: Name
+    response: ${ public_salutation } ${ public_firstname } ${ public_middlename } ${ public_lastname }
+  - category: Position 
+    response: ${ position_of_complainant }
+  - category: Venue
+    response: ${ target_venue }
+  - category: Disabilities
+    response: ${ rel_disabilities }
+  - category: Incident
+    response: ${ incident_type }
+  - category: General Access Issue
+    response: ${ access_issue_general }
+  - category: Other Access Issue
+    response: ${ access_issue_other }
+  - category: Specific Access Issue
+    response: $ {access_issue_specific }
+  - category: Confidentiality
+    response: ${ name_use }
+
+---
+question: Your Information
+subquestion: |
+  #### Here is validated information collected for you.
+  
+  Information is displayed along with which items are correct.
+  
+  ${ publicquestion_table }
+
+ 
+buttons:
+ - Exit: exit
+ - Restart: restart 
+---
+table: publicquestion_table
+rows: publicperson_info
+columns:
+  - Category: |
+      row_item['category']
+  - Response: |
+      row_item['response']     
+  
+---
+question: |
+ Is the information below correct for ${ publicperson_info[i] ['Name'] }?
+fields:
+ - no label: publicperson_info[i]['publicanswers']
+   datatype: checkboxes
+   code: publicperson_info[i]['publicchoices']
+---
+code: |
+ publicperson_info[i]['publicchoices'] = []
+ for publickey in publicperson_info[i]:
+  if publickey != 'publicchoices':
+   publicperson_info[i]['publicchoices'].append('**{}:** {}' .format(publickey, publicperson_info[i][publickey]))   
+---
 ---
 # DOCUMENT QUESTIONAIRE PART 10:
 # final page before endpoint. checking to see if understand

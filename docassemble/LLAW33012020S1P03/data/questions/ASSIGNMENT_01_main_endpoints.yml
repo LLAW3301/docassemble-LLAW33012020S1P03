@@ -7,7 +7,7 @@ subquestion: |
   **Please view the infomation below regarding your obligations as a venue owner/manager**
 
 attachment:
-  docx template file: Comprehensive_Disability_Access_Law_Factsheet_EOC_Adjusted.docx
+  docx template file: T3.docx
 
 ---
 # This is the endpoint for the questionnaire/ access alert
@@ -66,7 +66,7 @@ subquestion: |
   **follow this link to the EOC page:** [click here](https://eoc.sa.gov.au/).
   
 attachment:
-  docx template file: Quick_Disability_Access_Law_Factsheet_Original_EOC_Adjusted.docx
+  docx template file: T2.docx
   
 buttons:
  - Exit: exit

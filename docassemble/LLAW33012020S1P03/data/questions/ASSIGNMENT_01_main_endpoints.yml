@@ -14,8 +14,6 @@ subquestion: |
   #### Hello ${ public_salutation +' '+ public_lastname },  
   
   ${ publicquestion_table } 
-  --> GET RID OF
-
 
  
   %if position_of_complainant == 'For myself':
@@ -73,17 +71,18 @@ subquestion: |
   
  
   According to you, this was 
+  
   % if access_issue_general['Physical access']:
-  an issue with physical access
+  * an issue with physical access
   % endif
   % if access_issue_general['Visual assistance']:
-  a lack of visual assistance
+  * a lack of visual assistance
   % endif
   % if access_issue_general['Auditory assistance']:
-  a lack of auditory assistance
+  * a lack of auditory assistance
   % endif
   % if access_issue_general['General discriminatory attitude']:
-  the occurence of general discriminatory attitude
+  * the occurence of general discriminatory attitude
   % endif
 
 

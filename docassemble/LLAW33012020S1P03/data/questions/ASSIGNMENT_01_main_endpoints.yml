@@ -11,22 +11,26 @@ subquestion: |
 event: endpoint['eligible']
 question: Here is your document.
 subquestion: |
-  #### Hello ${ public_salutation +' '+ public_lastname },  
+  ## Hello ${ public_salutation +' '+ public_lastname },  
   
-  ## Here is the information collected from you.
+  ### Here is the information collected from you.
   
-  Below is the document/ letter which has been made to send to the 
+  Below is the letter which has been made to send to the
   venue via their email address:
-  * (${ target_venue })
-  * (${ target_email })
   
-  Pleas MAKE SURE you send to this email adress using the option 
-  provided under the document. It will be confidential.
+  * ${ target_venue }, ${ target_email }
+  
+  *Please send to this email adress using the "email this document"*
+  *function provided at the bottom of this page.*
+  
+  *This will be completely confidential and will not use your own email address.*
   
   We also encourage you to download it for yourself.
   
   
-  *Thank you for using this service, hope this has been beneficial to you... etc.*
+  
+  
+  *Thank you for using this service, we hope this has been beneficial to you.*
 
   ${ publicquestion_table } 
 

@@ -1,6 +1,5 @@
 # QUESTIONAIRE PART 1
-# NEED: to inform that "mx" is gender neutral??
-# UNFINISHED
+# Finished
 
 question: Creating your Disability Access Letter
 subquestion: |
@@ -23,7 +22,7 @@ fields:
     required: False
   - Last Name: public_lastname
   - note: |
-      **NOTE: No** information about your name will be sent without your consent 
+      **NOTE:** No information about your name will be sent without your consent 
 back button: True
 ---
 # DOCUMENT QUESTIONAIRE PART 2: WHO FILING FOR
@@ -45,16 +44,15 @@ back button: True
 
 question: Creating your Disability Access Letter
 subquestion: |
-  Who do you wish to contact about this access issue?
+  Which venue do you wish to contact about this access issue?
   
-  *This should be the name of the venue or premises where*
-  *you felt there was insufficient access to cater for your disability.*
+  *(This should be the venue where there was insufficient access for your disability)*
    
 fields:
   - Name of the relevant venue: target_venue
   - note: |
-      *Please use the full name of the venue or*
-      *premises, as well as their current email address*: 
+      Please use the full name of the venue, as well as their email address: 
+      
       *This can be searched up on the internet.*
    
   - E-mail of venue: target_email
@@ -67,15 +65,14 @@ back button: True
 
 question: Creating your Disability Access Letter 
 subquestion: |
-  **Nature of Disability**
+  **Which type of disability or disabilities do you feel were affected by the venue?**
 
   *To give this venue a better understanding of what it is they*
   *need to change to accommodate others, the letter will specify the type*
   *of disability that they did not accommodate for.*
   
-  Unless specified by you, this service will not specify the exact disability(ies).
+  Unless specified by you, this service will not disclose your specific disability(ies).
   
-  Which type of disability or disabilities do you feel were affected by the venue? 
   
 fields:
   - "Select all which are applicable": rel_disabilities
@@ -185,14 +182,10 @@ terms:
     * No hearing loop systems, OR a lack of other measures to facilliate sound control (such as soundproofing panels)
   
   Generally discriminatory attitudes etc.: | 
-    This includes, but is not limited to: 
+    This includes, but is not limited to (USE DEFINITIONS IN LAW HERE): 
     
-    * USE DEFINITIONS IN LAW HERE
-    
-    * Rudeness or refusal to assist you based on an apparent prejudice over your disability (FIX)
-    
-    * Not accepting your use of a guard dog within the venue 
-    
+    * Rudeness or refusal to assist you on the basis of your disability
+        
     * Favouritism over others on the grounds of your having a disability
     
     * Any type of derogatory comments, or other verbal abuse based on your disability (re. staff?)

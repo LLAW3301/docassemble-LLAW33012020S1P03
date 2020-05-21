@@ -4,7 +4,11 @@
 event: endpoint['endpoint_1']
 question: Purpose of visit to site
 subquestion: |
-  **VENUE INFORMATION GOES HERE**
+  **Please view the infomation below regarding your obligations as a venue owner/manager**
+
+attachment:
+  docx template file: T3.docx
+
 ---
 # This is the endpoint for the questionnaire/ access alert
 # UNFINISHED
@@ -56,20 +60,17 @@ buttons:
 event: endpoint['ineligible']
 question: Information regarding your rights under law
 subquestion: |
-  **Below is information regarding rights** 
-  
-  - Basic info of rights to access 
-  - Basic info on venue obligations (brief mention exceptions)
-  - Basics re disabilities and types of reasonable access provisions
-  - EOC as leading body in SA: have own formal process, use IF..
-  - Explain this is a precursor to formal process. If you wish to make an 
-    informal process as so described, click reset and follow informal 
-    complaint option (OR should this page link back to if_public and 
-    req_informal_complaint (ASK MARK ON HOW TO LINK TO SAME FILE
-    
+  **Below is information regarding your rights** 
  
-  **For other infomration or to access the formal complaint syst,**
+  - The infomation provided below is not to be taken as formal legal adivice. 
+  - The Equal Opportunity Commission have their own formal complaint system. 
+  - If you wish to make a formal complaint please click the link below. 
+ 
+  **For other infomration or to access the formal complaint system,**
   **follow this link to the EOC page:** [click here](https://eoc.sa.gov.au/).
+  
+attachment:
+  docx template file: T2.docx
   
 buttons:
  - Exit: exit

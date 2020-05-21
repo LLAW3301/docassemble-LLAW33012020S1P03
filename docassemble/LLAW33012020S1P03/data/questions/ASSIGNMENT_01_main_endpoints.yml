@@ -69,7 +69,6 @@ subquestion: |
 
   
   
- 
   According to you, this was 
   
   % if access_issue_general['Physical access']:
@@ -90,8 +89,7 @@ subquestion: |
   
   When asked to give detail about the specific issue which occured, you said the following:
   "${ access_issue_specific }"
-  
- 
+
  
   **Confidentiality:**
   
@@ -101,7 +99,13 @@ subquestion: |
   %elif name_use == 'name_anonymous':  
   will remain completely anonymous in this letter
   %endif 
-  
+
+  Your PDF letter.
+attachment:
+ docx template file: Templateletter.docx
+ valid formats:
+      - pdf
+
 buttons:
  - Finish: exit
    url: https://eoc.sa.gov.au/

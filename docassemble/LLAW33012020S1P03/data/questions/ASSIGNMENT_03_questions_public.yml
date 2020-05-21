@@ -100,6 +100,14 @@ fields:
 # need "other" text box
 back button: True
 ---
+#Questionnaire Addition- date of incident
+question: Date Incident Occurred
+subquestion: |
+ When did the incident occur?
+fields:
+ - no label: date_incident
+   datatype: date
+---
 # QUESTIONAIRE PART 6: general access issues
 # NEED: "if none of the above" text box 
 # NEED: make decision on whether letter will include their message
@@ -213,6 +221,8 @@ data:
     response: ${ rel_disabilities }
   - category: Incident
     response: ${ incident_type }
+  - category: Date of incident
+    response: ${ date_incident }
   - category: General Access Issue
     response: ${ access_issue_general }
   - category: Other Access Issue

@@ -1,4 +1,16 @@
 ---
+objects:
+  - EOClogo: DAStaticFile.using(filename='EOC_logo.jpg')
+---
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + EOClogo.url_for() + '" style="height: 50px;">')
+---
+features:
+  css: Assignment_designs.css
+  debug: True
+  hide standard menu: False
+---
 # Testing: features
 features:
   progress bar: True

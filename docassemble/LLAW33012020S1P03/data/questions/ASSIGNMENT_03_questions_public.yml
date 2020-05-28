@@ -1,10 +1,5 @@
----
-# DOCUMENT QUESTIONAIRE PART 1
-# NEED: to inform that "mx" is gender neutral??
-# NEED: find coherent/ easy to understand "question" title???
-# NEED: note below: "none of this information will be sent 
-# without allowing for your review + consent"? 
-# UNFINISHED
+# QUESTIONAIRE PART 1
+# Finished
 
 question: Creating your Disability Access Letter
 subquestion: |
@@ -13,6 +8,8 @@ subquestion: |
   Please state your full name, including any middle name(s). 
 fields:
   - Salutation: public_salutation 
+    help: |
+      "Mx" is a gender-neutral salutation.  
     choices:
     - Mr
     - Mrs
@@ -24,18 +21,16 @@ fields:
   - Middle Name(s): public_middlename
     required: False
   - Last Name: public_lastname
+  - note: |
+      **NOTE:** No information about your name will be sent without your consent 
 back button: True
 ---
 # DOCUMENT QUESTIONAIRE PART 2: WHO FILING FOR
-# MAKE OPTIONS sound better. MUST be worded in favour of individuals, not 
-# suggesting they are the inconvenience
-# link page must be default else option 
-#NEEDS: a note/ see below: "psn...who encountered a hindrance to access of a public venue on the basis of their disabiliity"
-# UNFINISHED
+# Finished
 
 question: Creating your Disability Access Letter
 subquestion: |
-  Who are you making this "complaint" for?  
+  Who are you making this access notification for?  
 fields: 
  - I am making this "alert": position_of_complainant
    choices: 
@@ -43,47 +38,25 @@ fields:
    - On behalf of someone else
 back button: True
 ---
-# DOCUMENT QUESTIONAIRE PART 3 (1/1)
-#NEED: is location_known() an option? or are we free texting it 
-#NEED: less adversarial wording
+# QUESTIONAIRE PART 3
+# NEED: grammar caps feature? 
 # UNFINISHED
 
 question: Creating your Disability Access Letter
 subquestion: |
-  Who are you making this acces alert against?
+  Which venue do you wish to contact about this access issue?
+  
+  *(This should be the venue where there was insufficient access for your disability)*
+   
 fields:
   - Name of the relevant venue: target_venue
   - note: |
-      This can be easily searched up on google. 
-      Please use most recognisable name blah blah... 
-      Please use capitals for each word.
-      (You will later need to submit email 
-      address as advertised online by this venue.
-back button: True
----
-# DOCUMENT QUESTIONAIRE PART 3 (2/2): might NOT need this???
-
-# UNFINISHED
-question: Creating your Disability Access Letter
-subquestion: |
-  Who are you making this complaint against?  
-  What type of venue is this complaint about?
-fields:
-  - Type of venue: venue_type
-    choices:
-    - A
-    - B
-    - C
-    - D
-    - E
-    - F 
-  - note: |
-      EXPLANATION of what constitutes:
-      A:
-      B:
-      C:
-      D:
-     
+      Please use the full name of the venue, as well as their email address: 
+      
+      *This can be searched up on the internet.*
+   
+  - E-mail of venue: target_email
+    datatype: email
 back button: True
 ---
 # DOCUMENT QUESTIONAIRE PART 4
@@ -92,17 +65,15 @@ back button: True
 
 question: Creating your Disability Access Letter 
 subquestion: |
-  **Nature of Disability**
-  
+  **Which type of disability or disabilities do you feel were affected by the venue?**
 
-  We understand disabilities come under a vast rage of topics. In an effort
-  to give this venue a more nuanced understanding of what it is they
-  need to change to better accommodate others, we must give them categories. 
+  *To give this venue a better understanding of what it is they*
+  *need to change to accommodate others, the letter will specify the type*
+  *of disability that they did not accommodate for.*
   
-  Which categories of disabiltities do you (associate with/ fall under)?
-  OR, "which disabilities that you possess do you feel were affected by 
-  the venue? (must include disclaimer that all disabilities are valid but
-  require relevant ones 
+  Unless specified by you, this service will not disclose your specific disability(ies).
+  
+  
 fields:
   - "Select all which are applicable": rel_disabilities
     datatype: checkboxes
@@ -114,39 +85,41 @@ fields:
 # need "if none of the above" text box 
 back button: True
 ---
-# DOCUMENT QUESTIONAIRE PART 5
-#"what happened"
-# 1) I was not permitted entry/ was unable to enter: could_not_enter
-# 2) I experienced access issues once inside the venue: issue_once_inside
+# QUESTIONAIRE PART 5: "what happened"
 # UNFINISHED
 
 question: Creating your Disability Access Letter 
 subquestion: |
- Please choose the option which mosr reflects how you encountered a difficulty at the venue
+ Please choose the option which best reflects how you encountered a difficulty at the venue
 fields: 
  - Please select which category applies so we can understand the incident: incident_type
    choices: 
-   - I was unable to enter the premises: could_not_enter
-   - I experienced accessibility issue(s) once inside the premises: issue_once_inside
+   - I was unable to enter the premises: could not enter
+   - I experienced accessibility issue(s) once inside the premises: encountered an issue once inside
    
 # need "other" text box
 back button: True
 ---
-# DOCUMENT QUESTIONAIRE PART 6
-# What type of access issue did you experience? GENERAL
-
-#UNFINISHED
+# EXTRA date of incident
+question: Date Incident Occurred
+subquestion: |
+  When did the incident occur?
+fields:
+  - no label: date_incident
+    datatype: date
+    required: False
+---
+# QUESTIONAIRE PART 6: general access issues
+# NEED: "if none of the above" text box 
+# NEED: make decision on whether letter will include their message
+# can we limit the amount of words???
+# UNFINISHED
 
 question: Creating your Disability Access Letter  
 subquestion: |
   **What type of access issue did you encounter at ${ target_venue }?** 
   
-  Regarding the issue you wish to raise, which tyoe of access issue does this **generally** concern?
-  
-  *This is because for some, this issue may be regarding one or more of these areas*
-  
-  *Note: you will be able to include information about your personal*
-  *experience in the next question.*
+  *If you felt that multiple issues occured, tick more than one box* 
 
 fields:
   - "Select **all** which are applicable": access_issue_general
@@ -159,45 +132,33 @@ fields:
   - "Other type of access issue": access_issue_other
     hint: optional
     required: False
-    
-# need "if none of the above" text box 
-# ISSUES WITH ENDPOINT 
 
 back button: True
 ---
-# DOCUMENT QUESTIONAIRE PART 7
-# What type of access issue did you experience? SPECIFIC
+# DOCUMENT QUESTIONAIRE PART 7: specific access issue
 
 # NEEDS: can we %IF multiple textboxes if necessary??? or too complicated?
+# NEEDS: to complete TERMS information 
 # UNFINISHED
 
 question: Creating your Disability Access Letter  
 subquestion: | 
-  **Specifics of impediment to venue access**
-  
-  **How did the venue fail to provide adequate access?**
+  **Specifics: How did the venue fail to provide adequate access?**
   
   *This is an opportunity for you to comment more specifically on how*
-  *this venue or premises did not cater to the needs of your disability.*
-  
-  *Please specify what was required: maybe use %IF for type of disability? 
-  
-  **If unsure how to specify, click on issues below**
+  *this venue did not cater to the needs of your disability.*
+      
+  If you are unsure on what to say, click on the words below for definitions and potential examples
   
   * {Physical access issues} 
   * {Access to audiovisual aids}
   * {Generally discriminatory attitudes etc.} 
 
-
-  *please keep this civil...? directions as to how to write this?*
-  
-  **will this be included IN letter? if so must say**
+  **Please note, a quoted copy of this personal account will be included in the letter to the venue.**
   
 fields: 
   - Please give as much detail as you can: access_issue_specific
     input type: area 
-
-#is there a way to put a word limit on this? 
 back button: True
 --- 
 # Questionnaire part 7 TERMS
@@ -216,25 +177,29 @@ terms:
   Access to audiovisual aids: |
     This includes, but is not limited to: 
     
-    * Appropriate signage for bathrooms, lifts or emergency procedures etc)
+    * Appropriate signs for bathrooms, lifts or emergency procedures etc.
     
-    * No hearing loop systems, OR absence of other measures to facilliate sound control (e.g. soundproofing panels) ????
+    * No hearing loop systems, OR a lack of other measures to facilliate sound control (such as soundproofing panels)
   
   Generally discriminatory attitudes etc.: | 
-    This includes, but is not limited to: 
+    This includes, but is not limited to (USE DEFINITIONS IN LAW HERE): 
     
-    * USE DEFINITIONS IN LAW HERE
+    * Rudeness or refusal to assist you on the basis of your disability
+        
+    * Favouritism over others on the grounds of your having a disability
+    
+    * Any type of derogatory comments, or other verbal abuse based on your disability (re. staff?)
+    
+    * Etc.
 ---
-# DOCUMENT QUESTIONAIRE PART 8:
-# would you like your name to be attatched or remain confidential?
-#yes/no question: change buttons to "Name included in document" "remain confidential" 
-
-#note: if you want to include your name, this will ONLY include your salutation and your last name. 
-# IS THIS NECESSARY? 
+# DOCUMENT QUESTIONAIRE PART 8: Confidentiality
 #UNFINISHED
 
 question: Creating your Disability Access Letter
 subquestion: | 
+  May delete this part 
+  
+ 
   **Confidentiality**
   Would you like your name to be attached or remain anonymous? 
   
@@ -244,48 +209,77 @@ field: name_use
 choices:
  - I would like to attatch my name to this letter: name_attatched
  - I would like to remain anonynous: name_anonymous 
- 
 back button: True
 ---
 # DOCUMENT QUESTIONAIRE PART 9:
-# summarising all information: "is the below information correct? if wish to edit, click "back" to edit rel information
-# next button= "This information is true and correct"
-# this same as C3 assignment. 
-
-# table: summary of quesiton blocks 
+# summarising all information: "is the below information correct? if wish to edit, click "back" to edit rel information.. OR, "This info is true & correct"
+# Needs EMAIL CATEGORY
+# Can we edit the name of the category?
 # UNFINISHED
+variable name: publicperson_info
+use objects: True
+data:
+  - category: Name
+    response: ${ public_salutation } ${ public_firstname } ${ public_middlename } ${ public_lastname }
+  - category: Position 
+    response: ${ position_of_complainant }
+  - category: Venue
+    response: ${ target_venue }
+  - category: Disabilities
+    response: ${ rel_disabilities.true_values() }
+  - category: Incident
+    response: ${ incident_type }
+  - category: General Access Issue
+    response: ${ access_issue_general.true_values() }
+  - category: Other Access Issue
+    response: ${ access_issue_other }
+  - category: Specific Access Issue
+    response: ${ access_issue_specific }
+  - category: Confidentiality
+    response: ${ name_use }
 
 ---
-# DOCUMENT QUESTIONAIRE PART 10:
-# final page before endpoint. checking to see if understand
-# "We are almost at the completion of this questionaire. Once you answer this question and continue, a document which includes this info will be sent to the venue automatically, and you will be taken to a page with a copy for you to download. "
-# "The specific type(s) of your disability will not be specified. Only where you experienced the access issue, what specific type of access problem you encountered... etc." 
-
-# buttons: "I understand and wish to continue", back, restart questionaire
-
-#NEED
-# UNFINISHED
-
-question: Creating your Disability Access Letter
+question: Your Information
 subquestion: |
-  **Almost there...**
+  #### Here is validated information collected for you.
   
-  This is the final page before completing this service. 
+  Information is displayed along with which items are correct.
   
-  As soon as you accept + continue, this letter will be emailed to 
-  the relevant venue. 
-  
-  You will be sent to a page confirming this, with a summary of the 
-  details that you provided.
-  
-  You will also be provided with your own version of this letter, which we encourage you to download and keep. 
-  
-  Thank you for using this service, hope this has been beneficial to you... etc. 
-  
-back button: True
-buttons: 
-  - I agree so send this letter by clicking this button: continue
-  - OR, I wish to restart this service: restart
-  - OR, I wish to exit this service: exit
+  ${ publicquestion_table }
+ 
+buttons:
+ - Exit: exit
+ - Restart: restart 
 ---
-
+table: publicquestion_table
+rows: publicperson_info
+columns:
+  - Category: |
+      row_item['category']
+  - Response: |
+      row_item['response']     
+edit: 
+  - elements['response']
+delete buttons: False
+---
+code: |
+  publicperson_info.there_is_another = False
+---
+question: |
+  Edit ${ publicperson_info[i]['category']}
+fields:
+  - Response: publicperson_info[i].elements['response']
+---
+question: |
+ Is the information below correct for ${ publicperson_info[i]['Name'] }?
+fields:
+ - no label: publicperson_info[i]['publicanswers']
+   datatype: checkboxes
+   code: publicperson_info[i]['publicchoices']
+---
+code: |
+ publicperson_info[i]['publicchoices'] = []
+ for publickey in publicperson_info[i]:
+  if publickey != 'publicchoices':
+   publicperson_info[i]['publicchoices'].append('**{}:** {}' .format(publickey, publicperson_info[i][publickey]))   
+---

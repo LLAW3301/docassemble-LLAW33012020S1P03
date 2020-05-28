@@ -1,4 +1,25 @@
-# Testing push to Github
+---
+objects:
+  - EOClogo: DAStaticFile.using(filename='EOC_logo.jpg')
+---
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + EOClogo.url_for() + '" style="height: 50px;">')
+---
+features:
+  css: Assignment_designs.css
+  debug: True
+  hide standard menu: False
+---
+# Testing: features
+features:
+  progress bar: True
+  show progress bar percentage: True
+  navigation: True
+  hide standard menu: True
+---
+features:
+  bootstrap theme: lumen.min.css
 ---
 include:
   - ASSIGNMENT_01_main_endpoints.yml
@@ -25,7 +46,15 @@ subquestion: |
    -	View relevant legal information regarding **your** rights to access as per the current law in South Australia, and
    
    - View information detailing the obligations of venues under the disability access laws found in *The Equal Opportunity Act 1984 (SA)*.
-  
+
+css: |
+  <style>
+    body {
+      background-image: url();
+      background-repeat: repeat;
+    }
+  </style>
+
 buttons: 
   - Next: continue 
   - Exit: exit
@@ -50,11 +79,7 @@ buttons:
 objects:
   - endpoint: DADict
 ---
-# This code block drives public requests. It determines whether member
-# of public wants to complain OR whether they just want information 
-# If want to complain, directs user to 'eligible' endpoint. Otherwise, directs 
-# to 'ineligible' endpoint.  
-# Note: This code block must be mandatory
+# This code block drives endpoints
 mandatory: True
 code: |
   if who_is_user == 'user_is_venue':

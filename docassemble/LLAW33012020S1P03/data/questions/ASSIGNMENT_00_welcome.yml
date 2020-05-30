@@ -6,9 +6,25 @@ mandatory: True
 code: |
   set_parts(logo='<img src="' + EOClogo.url_for() + '" style="height: 50px;">')
 ---
+metadata:
+  title: |
+    Disability Alert 
+  short title: |
+     
+  description: |
+    Access to your legal rights and further accessibiltiy infomation.
+    Create a step by step letter that will be sent to the applicable venue. 
+  authors:
+    - name: Ella Hunter
+    - name: Gemma Collins-Little 
+    - name: Vanessa Irvine 
+    - name: Ismadi Bin Jaafar 
+      organization: Example, Inc.
+  revision_date: 2015-09-28
+---
 features:
   css: Assignment_designs.css
-  debug: True
+  debug: False
   hide standard menu: False
 ---
 # Testing: features
@@ -21,10 +37,14 @@ features:
 features:
   bootstrap theme: lumen.min.css
 ---
+
 include:
   - ASSIGNMENT_01_main_endpoints.yml
   - ASSIGNMENT_02_questions_initial.yml
   - ASSIGNMENT_03_questions_public.yml
+---
+features: 
+  debug: False
 ---
 mandatory: True 
 question: Welcome,

@@ -17,10 +17,13 @@ fields:
     - Miss
     - Mx
     - Dr 
+    default: Mrs
   - First Name: public_firstname
+    default: Lauren 
   - Middle Name(s): public_middlename
     required: False
   - Last Name: public_lastname
+    default: Collins 
   - note: |
       **NOTE:** No information about your name will be sent without your consent 
 back button: True
@@ -36,6 +39,7 @@ fields:
    choices: 
    - For myself
    - On behalf of someone else
+   default: For myself 
 back button: True
 ---
 # QUESTIONAIRE PART 3
@@ -50,6 +54,7 @@ subquestion: |
    
 fields:
   - Name of the relevant venue: target_venue
+    default: Victory Hotel Sellicks Beach 
   - note: |
       Please use the full name of the venue, as well as their email address: 
       
@@ -57,6 +62,7 @@ fields:
    
   - E-mail of venue: target_email
     datatype: email
+    default: Victory103@gmail.com 
 back button: True
 ---
 # DOCUMENT QUESTIONAIRE PART 4
@@ -82,6 +88,7 @@ fields:
       - Auditory
       - Physical
       - Mental
+    default: Physical 
 # need "if none of the above" text box 
 back button: True
 ---
@@ -96,6 +103,7 @@ fields:
    choices: 
    - I was unable to enter the premises: could not enter
    - I experienced accessibility issue(s) once inside the premises: encountered an issue once inside
+   default: I was unable to enter the premises 
    
 # need "other" text box
 back button: True
@@ -128,7 +136,8 @@ fields:
       - Physical access
       - Visual assistance
       - Auditory assistance
-      - General discriminatory attitude    
+      - General discriminatory attitude  
+    default: Physical access
   - "Other type of access issue": access_issue_other
     hint: optional
     required: False
@@ -159,6 +168,7 @@ subquestion: |
 fields: 
   - Please give as much detail as you can: access_issue_specific
     input type: area 
+    default: There were no ramps only stairs. The doorways were also too narrow. 
 back button: True
 --- 
 # Questionnaire part 7 TERMS
@@ -208,6 +218,7 @@ subquestion: |
 field: name_use
 choices:
  - I would like to attatch my name to this letter: name_attatched
+   default: I would like to attach my name to this letter 
  - I would like to remain anonynous: name_anonymous 
 back button: True
 ---

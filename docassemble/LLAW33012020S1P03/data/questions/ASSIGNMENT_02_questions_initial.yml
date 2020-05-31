@@ -13,13 +13,13 @@ subquestion: |
   **For which reason are you accessing this service?**
 field: purpose
 choices:
-  - I wish to make notify a venue of a disability access issue: req_informal_complaint
+  - I wish to notify a venue of a disability access issue: req_informal_complaint
     help: |
-        This will take you to a page where you will answer questions about how you felt your rights to access were *affected* on the grounds of your disability. 
+        This will take you to a questionnaire, asking how you felt your rights to access were *affected* on the grounds of your disability. 
   - I wish to recieve more information about my rights: req_public_info
     help: |
-        This will take you to a page with downloadable information 
-        about *your* rights under anti-discrimination law and what venues must
+        This will take you to downloadable information about *your* 
+        rights under anti-discrimination law and what venues must
         do to accomodate your needs. 
   - Other: other_purpose
 back button: True

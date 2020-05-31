@@ -1,59 +1,109 @@
 ---
-# endpoint for venues recieving information 
-# UNFINISHED
-event: endpoint['endpoint_1']
-question: Purpose of visit to site
-subquestion: |
-  **Please view the infomation below regarding your obligations as a venue owner/manager**
-
-attachment:
-  docx template file: T3.docx
-
----
-# This is the endpoint for the questionnaire/ access alert
-# UNFINISHED
 event: endpoint['eligible']
-question: Here is your document.
+code: |
+  ee_q1
+  ee_q2
+---
+# DOCUMENT QUESTIONAIRE PART 9:
+# NEEDS: progress bar 
+question: Creating your Disability Access Letter
 subquestion: |
+  **Information check**
+  
+  This is your final opportunity to ensure all the information provided is correct. 
+  
+   ${ publicquestion_table } 
+   
+   
+   You may edit this information above if necessary. 
+   
+   Otherwise, once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
+
+progress: 90
+continue button field: ee_q1
+---
+event: ee_q2
+# ENDPOINT for access alert
+question: |
   ## Hello ${ public_salutation +' '+ public_lastname },  
   
-  ### Here is the information collected from you.
+  **Your letter has been created and sent to ${ target_venue }.**
   
   Below is the letter which has been made to send to the
-  venue via their email address:
-  
-  * ${ target_venue }, ${ target_email }
-  
-  *Please send to this email adress using the "email this document"*
-  *function provided at the bottom of this page.*
-  
-  *This will be completely confidential and will not use your own email address.*
+  venue via their email address.
   
   We also encourage you to download it for yourself.
   
   
-  
-  
   *Thank you for using this service, we hope this has been beneficial to you.*
 
-  ${ publicquestion_table } 
-
-
-
-  ## Your PDF letter.
 attachment:
  docx template file: Templateletter.docx
  valid formats:
       - pdf
-
+progress: 100
 buttons:
  - Finish: exit
    url: https://eoc.sa.gov.au/
  - Restart form: restart
 ---
-# This is the information endpoint for the public (?)
-# It will be displayed on this screen in a drop down menu, AND 
-# at the bottom will be a downloadable PDF copy with option to email 
+# endpoint for venues recieving information 
+# finished
+event: endpoint['endpoint_1']
+question: Information for Venues (Disability Access)
+subquestion: |
+  **This is a brief summary of your obligations as a venue owner/manager.**
+ 
+  To recieve a more comprehensive factsheet on the relelvant law, download the PDF file attatched below. 
+  
+  [BR]
+  **Equal Opportunity Act:**
+  
+  The Equal Opportunity Act is law that promotes equality of opportunity for all Australian citizens. It prevents discrimination based on *disability*, as well as sex, race, and other grounds with an end goal of promoting citizens’ participation in economic and social life of the community. 
+  
+  [BR]
+  **Obligations of venues to provide access:**
+  
+  Venues are required by law to provide safe and suitable access onto premises to those with a disability, just as they do with other members of the public. 
+  
+  It is unlawful for venues providing goods and services to discriminate against another on the ground of disability. This includes:
+  
+  * Refusing or failing to supply goods and services,
+  * Implementing unfair or unreasonable terms and conditions for the entry into the premises or the supply of its goods and services.
+  
+  In this regard, the owner of the premises **and** the occupier will **each** be obligated to offer or provide indiscriminate services.
+  
+  [BR]
+  **Unjustifiable Hardship Exemption**
+  
+  While venues must provide safe and suitable access for those with a disability, there may be some circumstances where it is recognised that a venue cannot provide access, due to such changes creating ‘unjustifiable hardship’  for the relevent venue. 
+  
+  When determining whether taking measures to ensure disability access is reasonably feasible, all relevant circumstances are taken into account, including:
+  
+  * The nature of the benefit, 
+  * The detriment likely to accrue or be suffered by the persons concerned
+  * The nature of the disability, and, 
+  * Whether it is financial feasible the venue can fulfil this requirement for greater disability access. 
+
+  If would be unreasonable to ask the venue to take steps to ensure the particular access accommodations, the venue may be exempt from making such change.
+
+  [BR]
+  *See below for more information regarding methods of improving disability access and for information regarding the formal complaint process.*
+
+
+progress: 100
+attachment:
+  docx template file: T3.docx
+buttons:
+ - Finish: exit
+   url: https://eoc.sa.gov.au/
+ - Restart form: restart
+---
+# ENDPOINT for public information
+# MOST IMPORTANT PARTS displayed on this screen, AND 
+# at the bottom will be a downloadable PDF copy with option to email.
+
+# NEED: progress bar 100, finish/ restart buttons
 
 # UNFINISHED
 
@@ -71,7 +121,7 @@ subquestion: |
   
 attachment:
   docx template file: T2.docx
-  
+progress: 100
 buttons:
  - Exit: exit
    url: https://eoc.sa.gov.au/
@@ -81,27 +131,17 @@ buttons:
 # UNFINISHED (needs refining)
 
 event: endpoint['link_page']
-question: Information on rights 
+question: Hello,
 subquestion: |
-  **Hello User,** 
+  **Currently, this application is only for:**
+ 
+  1) Assisting individuals with diabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 
   
-  If you clicked "other", this suggests you do not wish to use 
-  this software for its designated use 
+  2) Providing information for both individuals and venues regarding disability rights and obligations on public premises. 
   
-  
-  **Designated uses:**
-  
-  1) Provide for informal complaint process (explain)
-  
-  2) Provide information for both individuals and venues re. disability 
-  discriminattion on public premises. 
-  
-  If you wish instead to access EOC page, click [here](https://eoc.sa.gov.au/).
-  
-  If wish to access EOC complaint system, *link to be provided here*.
-  
-  Otherwise, we recommend starting again. 
-  
+  If you need more information, please click [here](https://eoc.sa.gov.au/) to access the Equal Opportunity Homepage.
+
+progress: 100
 buttons:
  - Exit: exit
    url: https://eoc.sa.gov.au/

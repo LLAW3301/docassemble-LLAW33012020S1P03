@@ -30,22 +30,21 @@ mandatory: True
 question: Welcome,
 subquestion: | 
   **Welcome to the Equal Opportunity Commission's** 
-  **Disability Access Report** (fix wording)
+  **Disability Access Service**
   
     This program has been designed so that you may easily and anonymously
-    report your experience of an accessibility issue, directly to the venue
-    in question. 
+    contact venues about your experience of an accessibility problem.
 
 
   **This service will assist you to:**
   
-   - 	Submit a report to notify venues they have legal obligations to provide  access for disabilities,
+   - 	Send a letter notifying venues they have legal obligations to provide  access for people with disabilities,
    
-   - 	Download a PDF copy of this report,
+   - 	Download a PDF copy of this document,
    
-   -	View relevant legal information regarding **your** rights to access as per the current law in South Australia, and
+   -	View legal information about your rights to venue access as per current South Australian law, and
    
-   - View information detailing the obligations of venues under the disability access laws found in *The Equal Opportunity Act 1984 (SA)*.
+   - View information about venues' obligations under the disability access laws of *The Equal Opportunity Act 1984 (SA)*.
 
 css: |
   <style>
@@ -61,15 +60,15 @@ buttons:
     url: https://eoc.sa.gov.au
 ---
 mandatory: True 
-question:  Welcome, 
+question:  |
+  Disclaimer:
 subquestion: | 
-  ***Disclaimer:***  
- 
-  **This service is not to be taken as a subsitute to formal legal advice** 
+  **This service is not to be taken as a subsitute to formal legal advice.**
   
-   The automated access report you may choose submit is also *not the same as a formal complaint* submitted to the Equal Opportunity Commission. 
+  The letter you may choose to submit is not the same as a formal complaint made through the Equal Opportunity Commission. 
     
-  If you wish instead to make a formal complaint to the Equal Opportunity Commission, please click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to the the online complaint service. 
+  **If you wish to make a formal complaint to the Equal Opportunity Commission,**
+  please click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to the online complaint service. 
  
 buttons: 
   - I accept and wish to continue: continue 

@@ -90,6 +90,8 @@ back button: True
 question: Date Incident Occurred
 subquestion: |
   When did the incident occur?
+  
+  Please use the *dd/mm/yyyy* format. 
 fields:
   - Date: date_incident
     datatype: date
@@ -144,6 +146,8 @@ fields:
       - Auditory assistance
       - Sensory accommodations
       - General discriminatory attitude
+      - Intellectual assistance
+      - Assistance animal issue
     none of the above: False
   - "Other": access_issue_other
     hint: Optional
@@ -268,6 +272,9 @@ code: |
     incident_type_table = 'Could not enter the venue'
   elif incident_type == 'encountered an issue once inside,':
     incident_type_table = 'Issue encountered once inside'
+  elif incident_type == 'could not enter and encountered an issue once inside,':
+    incident_type_table = 'Could not enter the venue, and an issue was encountered once inside'
+
 ---
 table: publicquestion_table
 rows: publicperson_info

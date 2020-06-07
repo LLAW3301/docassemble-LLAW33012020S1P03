@@ -9,15 +9,15 @@ code: |
 question: Creating your Disability Access Letter
 subquestion: |
   **Information check**
+
+  Look at the information you provided to make sure it is all correct. 
   
-  This is your final opportunity to ensure all the information provided is correct. 
-  You may edit this information if necessary. 
-
-
    ${ publicquestion_table } 
    
    
-   Once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
+   Here you can change the information you entered. 
+   
+   **Important:** Otherwise, once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
 
 progress: 90
 continue button field: ee_q1
@@ -36,6 +36,10 @@ question: |
   
   
   *Thank you for using this service, we hope this has been beneficial to you.*
+  
+   If you need more information, please click [here](https://eoc.sa.gov.au/) to access the **Equal Opportunity Commission** Homepage. 
+   
+   You can also access the homepage of **Purple Orange**, where you can find more information and opportunities regarding living with a disability, by clicking [here](https://www.purpleorange.org.au/).
 
 
   *This letter is a notification to the venue, and will not be responded to.*
@@ -43,7 +47,7 @@ question: |
   - FIX
   
 attachment:
- docx template file: Templateletter.docx
+ docx template file: Templateletter_7_june.docx
  valid formats:
       - pdf
 progress: 100
@@ -60,7 +64,7 @@ subquestion: |
   ## This is an unfinished part of the service. Team still editing.
   **This is a brief summary of your obligations as a venue owner/manager.**
  
-  To recieve a more comprehensive factsheet on the relelvant law, download the PDF file attatched below. 
+  To receive a more comprehensive factsheet on the relevant law, download the PDF file attached below. 
   
   [BR]
   **Equal Opportunity Act:**
@@ -143,7 +147,7 @@ subquestion: |
   ## This is an unfinished part of the service. Team still editing.
   **Currently, this application is only for:**
  
-  1) Assisting individuals with diabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 
+  1) Assisting individuals with disabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 
   
   2) Providing information for both individuals and venues regarding disability rights and obligations on public premises. 
   

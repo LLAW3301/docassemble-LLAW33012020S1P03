@@ -1,4 +1,39 @@
 ---
+metadata:
+  title: |
+    Equal Opportunity Commission Access Alert Letter
+  short title: |
+    Disability Access Letter 
+  description: |
+    Access to your legal rights and further accessibiltiy infomation.
+    Create a step by step letter that will be sent to the applicable venue. 
+  authors:
+    - name: Ella Hunter
+    - name: Gemma Collins-Little
+    - name: Vanessa Irvine 
+    - name: Ismadi Bin Jaarfar
+  organisation: Flinders University
+  show login: False
+---
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: center">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with South Australian Equal Opportunity Commission
+    </i></small></cite>
+    </div>
+    </div>
+---
+image sets:
+  docassemble:
+    attribution: |
+      This is the image attribution.
+    images:
+      star: star.svg
+---
 objects:
   - EOClogo: DAStaticFile.using(filename='EOC_logo.jpg')
 ---
@@ -63,16 +98,14 @@ subquestion: |
   
   [BOLDCENTER]OPTION 1: [BR][CENTER]Use this service to create a letter to the venue
   
-  If you want to send a letter, you will need to fill out a questionaire.
+  If you want to send a letter, you will need to fill out a questionnaire.
   You will need to provide:
   
   * Your name,
-  * The name and email address of the venue, and 
+  * The full name and email address of the venue, and 
   * Basic details about the access issue experienced. 
  
-  *This letter is a notification to the venue, and will not be responded to.*
-  
-  Details about the venue should be searched up on the internet before you use this service. 
+  Details about the venue can be searched up on the internet before you use this service. 
   
   [BR]
   [BOLDCENTER]OPTION 2: [BR][CENTER]Make a formal complaint with the Equal Opportunity Commission
@@ -80,11 +113,7 @@ subquestion: |
   If you want to make a formal complaint to the Equal Opportunity Commission,
   click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to their complaint service. 
   
-  *Unlike the letter, a formal complaint will require the venue to respond* 
-  
   [BR]
-
-
 
 buttons: 
   - Continue to the questionnaire: continue 

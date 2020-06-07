@@ -1,7 +1,5 @@
 ---
 # QUESTIONAIRE PART 1: WHO FILING FOR
-# UNFinished
-# NEEDS: NOTES AND JS SHOW IF TO WORK 
 question: Creating your Disability Access Letter
 subquestion: |
   **Who are you wanting to make this access letter for?** 
@@ -10,13 +8,8 @@ choices:
   - Myself
   - On behalf of someone else
 
-note: |
-  PLEASE NOTE [BR] You must fill out this questionnaire as the individual who experienced difficulties with venue access. [BR][BR] This is best to do in their presence. Do not disclose their personal details such as name or specifics of disability(ies) without their prior consent.   
-js show if: |
-      val('position_of_complainant') == "On behalf of someone else"
-
 under: |
-  **PLEASE NOTE** [BR] You must fill out this questionnaire as the individual who experienced difficulties with venue access. [BR][BR] This is best to do in their presence. Do not disclose their personal details such as name or specifics of disability(ies) without their prior consent. 
+  **Please note:** [BR] *If you are creating this letter for someone else, you must fill out this questionnaire as the individual who experienced the issue. [BR] This is best to do in their presence. Do not disclose their personal details, such as name or specifics of disability(ies), without their consent.*
   
 progress: 10
 back button: True
@@ -82,13 +75,13 @@ back button: True
 
 question: Creating your Disability Access Letter
 subquestion: |
-  **Which venue do you wish to contact about this access issue?**
+  **Which venue do you wish to contact about this issue?**
 fields:
   - Name of Venue: target_venue
   - E-mail of Venue: target_email
     datatype: email
     hint: venue@example.com
-    
+
 progress: 40
 back button: True
 ---
@@ -107,13 +100,12 @@ back button: True
 # Finished
 question: Creating your Disability Access Letter 
 subquestion: |
-   % if position_of_complainant == 'For myself':
-   Please select which category best reflects how you encountered
-   an issue at ${ title_case(target_venue) }. 
-   % elif position_of_complainant == 'On behalf of someone else':
-   Please select which category best reflects how the individual encountered an issue at ${ title_case(target_venue) }.
-   % endif
- 
+  % if position_of_complainant == 'For myself':
+  Please select which category best reflects how you encountered an issue at ${ title_case(target_venue) }. 
+  % elif position_of_complainant == 'On behalf of someone else':
+  Please select which category best reflects how the individual encountered an issue at ${ title_case(target_venue) }.
+  % endif
+
 field: incident_type
 choices: 
    - I was unable to enter the premises: could not enter
@@ -122,7 +114,6 @@ progress: 60
 back button: True
 ---
 # QUESTIONAIRE PART 6: general access issues
-# NEED: MORE NUANCED: more in depth "choices":
 # UNFINISHED: NEED terms here too: 
 # Physical access: Including physical disfigurement or impairment/ disab, work-related injuries,  medical conditions (e.g. diabetes), 
 # those that require the use of a mobility aid, presence of the body of organisms causing disease

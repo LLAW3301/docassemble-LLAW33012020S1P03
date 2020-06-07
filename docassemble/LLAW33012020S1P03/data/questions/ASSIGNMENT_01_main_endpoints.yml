@@ -37,6 +37,11 @@ question: |
   
   *Thank you for using this service, we hope this has been beneficial to you.*
 
+
+  *This letter is a notification to the venue, and will not be responded to.*
+  *Unlike the letter, a formal complaint will require the venue to respond* 
+  - FIX
+  
 attachment:
  docx template file: Templateletter.docx
  valid formats:

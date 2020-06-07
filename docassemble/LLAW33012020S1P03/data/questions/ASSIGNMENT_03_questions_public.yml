@@ -78,6 +78,8 @@ back button: True
 question: Date Incident Occurred
 subquestion: |
   When did the incident occur?
+  
+  Please use the *dd/mm/yyyy* format. 
 fields:
   - Date: date_incident
     datatype: date
@@ -100,6 +102,7 @@ fields:
    choices: 
    - I was unable to enter the premises: could not enter
    - I experienced issue(s) once inside the premises: encountered an issue once inside,
+   - Both of the above: could not enter and encountered an issue once inside,
 progress: 50  
 back button: True
 ---
@@ -135,6 +138,8 @@ fields:
       - Auditory assistance
       - Sensory accommodations
       - General discriminatory attitude
+      - Intellectual assistance
+      - Assistance animal issue
     none of the above: False
   - "Other": access_issue_other
     hint: Optional
@@ -237,7 +242,7 @@ subquestion: |
   
 field: name_use
 choices:
- - Yes, I want to attatch my name to this letter: name_attatched
+ - Yes, I want to attach my name to this letter: name_attatched
  - No, I would like to remain anonynous: name_anonymous 
 progress: 80
 back button: True
@@ -286,6 +291,9 @@ code: |
     incident_type_table = 'Could not enter the venue'
   elif incident_type == 'encountered an issue once inside,':
     incident_type_table = 'Issue encountered once inside'
+  elif incident_type == 'could not enter and encountered an issue once inside,':
+    incident_type_table = 'Could not enter the venue, and an issue was encountered once inside'
+
 ---
 table: publicquestion_table
 rows: publicperson_info

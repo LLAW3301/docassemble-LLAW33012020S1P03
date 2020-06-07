@@ -10,14 +10,14 @@ question: Creating your Disability Access Letter
 subquestion: |
   **Information check**
   
-  This is your final opportunity to ensure all the information provided is correct. 
+  Look at the information you provided to make sure it is all correct. 
   
    ${ publicquestion_table } 
    
    
-   You may edit this information above if necessary. 
+   Here you can change the information you entered. 
    
-   Otherwise, once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
+   **Important:** Otherwise, once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
 
 progress: 90
 continue button field: ee_q1
@@ -36,9 +36,13 @@ question: |
   
   
   *Thank you for using this service, we hope this has been beneficial to you.*
+  
+   If you need more information, please click [here](https://eoc.sa.gov.au/) to access the **Equal Opportunity Commission** Homepage. 
+   
+   You can also access the homepage of **Purple Orange**, where you can find more information and opportunities regarding living with a disability, by clicking [here](https://www.purpleorange.org.au/).
 
 attachment:
- docx template file: Templateletter.docx
+ docx template file: Templateletter_7_june.docx
  valid formats:
       - pdf
 progress: 100
@@ -54,7 +58,7 @@ question: Information for Venues (Disability Access)
 subquestion: |
   **This is a brief summary of your obligations as a venue owner/manager.**
  
-  To recieve a more comprehensive factsheet on the relelvant law, download the PDF file attatched below. 
+  To receive a more comprehensive factsheet on the relevant law, download the PDF file attached below. 
   
   [BR]
   **Equal Opportunity Act:**
@@ -135,7 +139,7 @@ question: Hello,
 subquestion: |
   **Currently, this application is only for:**
  
-  1) Assisting individuals with diabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 
+  1) Assisting individuals with disabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 
   
   2) Providing information for both individuals and venues regarding disability rights and obligations on public premises. 
   

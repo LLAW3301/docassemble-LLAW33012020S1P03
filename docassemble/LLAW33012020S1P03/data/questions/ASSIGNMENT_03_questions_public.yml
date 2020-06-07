@@ -1,19 +1,44 @@
 ---
 # QUESTIONAIRE PART 1: WHO FILING FOR
-# Finished
 question: Creating your Disability Access Letter
 subquestion: |
   **Who are you wanting to make this access letter for?** 
-fields: 
-  - I am making this letter: position_of_complainant
-    choices: 
-      - For myself
-      - On behalf of someone else
-  - note: PLEASE NOTE [BR] You must fill out this questionnaire as the individual who experienced difficulties with venue access. [BR][BR] This is best to do in their presence. Do not disclose their personal details such as name or specifics of disability(ies) without their prior consent.   
-    js show if:
-      val('position_of_complainant') == "On behalf of someone else"
-     
+field: position_of_complainant
+choices: 
+  - Myself
+  - On behalf of someone else
+
+under: |
+  **Please note:** [BR] *If you are creating this letter for someone else, you must fill out this questionnaire as the individual who experienced the issue. [BR] This is best to do in their presence. Do not disclose their personal details, such as name or specifics of disability(ies), without their consent.*
+  
 progress: 10
+back button: True
+---
+# DOCUMENT QUESTIONAIRE PART 1.5: Confidentiality
+#UNFINISHED
+question: Creating your Disability Access Letter
+subquestion: |  
+  **Confidentiality**
+   
+  % if position_of_complainant == 'Myself':
+  Your name will **not** be given to others without your consent.
+  
+  However, you can choose to have your prefix and last name included in this letter. 
+  
+  **Do you want to do this?**
+  % elif position_of_complainant == 'On behalf of someone else':
+  The individual's name will **not** be given to others without your consent.
+  
+  However, they can choose to have their preferred prefix and last name included in this letter. 
+  
+  **Do they want to do this?**
+  % endif
+  
+field: name_use
+choices:
+ - Yes, I want to use my name in this letter: name_attached
+ - No, I would like to remain anonynous: name_anonymous 
+progress: 20
 back button: True
 ---
 # QUESTIONAIRE PART 2
@@ -22,16 +47,14 @@ question: Creating your Disability Access Letter
 subquestion: |
    **Name**
    
-   % if position_of_complainant == 'For myself':
-   Please state your full name, including any middle name(s). 
+   % if position_of_complainant == 'Myself':
+   Please state your name. 
    % elif position_of_complainant == 'On behalf of someone else':
-   Please state the full name of the affected person, including any middle name(s).
+   Please state the name of the affected person.
    % endif
 
 fields:
-  - Prefix: public_salutation 
-    help: |
-      "Mx" is a gender-neutral prefix.  
+  - Prefix: public_salutation
     choices:
     - Mr
     - Mrs
@@ -39,19 +62,12 @@ fields:
     - Miss
     - Mx
     - Dr 
+    html: |
+      <span style="">Note: Mx is a gender-neutral prefix.</span>     
   - First Name: public_firstname
-  - Middle Name(s): public_middlename
-    required: False
   - Last Name: public_lastname
-  - note: |
-      **NOTE:** 
-      
-      *This information will **not** be disclosed to others
-      without consent.*
-      
-      
-      *Unless specified by you, this service will also not disclose specific disability(ies).*
-progress: 20
+
+progress: 30
 back button: True
 ---
 # QUESTIONAIRE PART 3
@@ -59,21 +75,17 @@ back button: True
 
 question: Creating your Disability Access Letter
 subquestion: |
-  **Which venue do you wish to contact about this access issue?**
+  **Which venue do you wish to contact about this issue?**
 fields:
   - Name of Venue: target_venue
   - E-mail of Venue: target_email
     datatype: email
     hint: venue@example.com
-  - note: |
-      
-      *The venue's full name and email address can
-      be searched up on the internet.*
-progress: 30
+
+progress: 40
 back button: True
 ---
 # Questionnaire part 4: Date of incident
-# NEED: delete required false
 # UNFINISHED
 question: Date Incident Occurred
 subquestion: |
@@ -83,31 +95,27 @@ subquestion: |
 fields:
   - Date: date_incident
     datatype: date
-progress: 40
+progress: 50
 back button: True
 ---
 # QUESTIONAIRE PART 5: "what happened"
 # Finished
 question: Creating your Disability Access Letter 
 subquestion: |
-   % if position_of_complainant == 'For myself':
-   Please select which category best reflects how you encountered
-   an issue at ${ title_case(target_venue) }. 
-   % elif position_of_complainant == 'On behalf of someone else':
-   Please select which category best reflects how the individual encountered an issue at ${ title_case(target_venue) }.
-   % endif
- 
-fields: 
- - no label: incident_type
-   choices: 
+  % if position_of_complainant == 'For myself':
+  Please select which category best reflects how you encountered an issue at ${ title_case(target_venue) }. 
+  % elif position_of_complainant == 'On behalf of someone else':
+  Please select which category best reflects how the individual encountered an issue at ${ title_case(target_venue) }.
+  % endif
+
+field: incident_type
+choices: 
    - I was unable to enter the premises: could not enter
    - I experienced issue(s) once inside the premises: encountered an issue once inside,
-   - Both of the above: could not enter and encountered an issue once inside,
-progress: 50  
+progress: 60  
 back button: True
 ---
 # QUESTIONAIRE PART 6: general access issues
-# NEED: MORE NUANCED: more in depth "choices":
 # UNFINISHED: NEED terms here too: 
 # Physical access: Including physical disfigurement or impairment/ disab, work-related injuries,  medical conditions (e.g. diabetes), 
 # those that require the use of a mobility aid, presence of the body of organisms causing disease
@@ -144,7 +152,7 @@ fields:
   - "Other": access_issue_other
     hint: Optional
     required: False
-progress: 60
+progress: 70
 back button: True
 ---
 # DOCUMENT QUESTIONAIRE PART 7: specific access issue
@@ -175,7 +183,7 @@ fields:
   - no label: access_issue_specific
     input type: area 
     hint: Please note, this personal account will be included in the letter to the venue.
-progress: 70
+progress: 80
 back button: True
 --- 
 # Questionnaire part 7 TERMS
@@ -223,44 +231,19 @@ terms:
     
     * Any type of harrassment, derogatory comments or other verbal abuse based on your disability
 ---
-# DOCUMENT QUESTIONAIRE PART 8: Confidentiality
-#UNFINISHED
-
-question: Creating your Disability Access Letter
-subquestion: |  
-  **Confidentiality**
-  
-  % if position_of_complainant == 'For myself':
-  You can choose to have your preferred prefix and last name included in this letter. 
-  
-  Do you want to do this? 
-  % elif position_of_complainant == 'On behalf of someone else':
-  The individual can choose to have their preferred prefix and last name included in this letter. 
-  
-  Do they want to do this? 
-  % endif
-  
-field: name_use
-choices:
- - Yes, I want to attach my name to this letter: name_attatched
- - No, I would like to remain anonynous: name_anonymous 
-progress: 80
-back button: True
----
-# TABLE:
-# Needs EMAIL CATEGORY
-# HOW TO CHANGE RESONSES TO SUIT TABLE
-# UNFINISHED
+# TABLE
+# FINISHED
 variable name: publicperson_info
 use objects: True
 data:
   - category: Letter made
     response: ${ position_of_complainant }
+  - category: Confidentiality
+    response: ${ display_name }
   - category: Name
-    response: ${ public_salutation } ${ public_firstname } ${ public_middlename } ${ public_lastname }
+    response: ${ public_salutation } ${ public_firstname } ${ public_lastname }
   - category: Venue
     response: ${ title_case(target_venue) }
-
   - category: Venue email
     response: ${ target_email }
   - category: Date of Occurence 
@@ -273,16 +256,14 @@ data:
     response: ${ access_issue_other }
   - category: Personal statement of ${ public_salutation } ${ public_lastname }
     response: ${ access_issue_specific }
-  - category: Confidentiality
-    response: ${ display_name }
 ---
 # Table confidentiality CODE
 # finished
 code: |
   if name_use == 'name_anonymous':
     display_name = 'Name to be kept anonymous'
-  elif name_use == 'name_attatched':
-    display_name = 'Name to be attatched to letter'
+  elif name_use == 'name_attached':
+    display_name = 'Name to be attached to letter'
 ---
 # Table incident type CODE
 # finished

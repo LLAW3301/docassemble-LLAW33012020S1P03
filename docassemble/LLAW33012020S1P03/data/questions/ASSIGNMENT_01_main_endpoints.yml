@@ -9,7 +9,7 @@ code: |
 question: Creating your Disability Access Letter
 subquestion: |
   **Information check**
-  
+
   Look at the information you provided to make sure it is all correct. 
   
    ${ publicquestion_table } 
@@ -41,6 +41,11 @@ question: |
    
    You can also access the homepage of **Purple Orange**, where you can find more information and opportunities regarding living with a disability, by clicking [here](https://www.purpleorange.org.au/).
 
+
+  *This letter is a notification to the venue, and will not be responded to.*
+  *Unlike the letter, a formal complaint will require the venue to respond* 
+  - FIX
+  
 attachment:
  docx template file: Templateletter_7_june.docx
  valid formats:
@@ -56,6 +61,7 @@ buttons:
 event: endpoint['endpoint_1']
 question: Information for Venues (Disability Access)
 subquestion: |
+  ## This is an unfinished part of the service. Team still editing.
   **This is a brief summary of your obligations as a venue owner/manager.**
  
   To receive a more comprehensive factsheet on the relevant law, download the PDF file attached below. 
@@ -114,6 +120,7 @@ buttons:
 event: endpoint['ineligible']
 question: Information regarding your rights under law
 subquestion: |
+  ## This is an unfinished part of the service. Team still editing.
   **Below is information regarding your rights** 
  
   - The infomation provided below is not to be taken as formal legal adivice. 
@@ -137,6 +144,7 @@ buttons:
 event: endpoint['link_page']
 question: Hello,
 subquestion: |
+  ## This is an unfinished part of the service. Team still editing.
   **Currently, this application is only for:**
  
   1) Assisting individuals with disabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 

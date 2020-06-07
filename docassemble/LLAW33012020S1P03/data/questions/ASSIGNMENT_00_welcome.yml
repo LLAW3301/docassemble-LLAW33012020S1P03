@@ -1,4 +1,39 @@
 ---
+metadata:
+  title: |
+    Equal Opportunity Commission Access Alert Letter
+  short title: |
+    Disability Access Letter 
+  description: |
+    Access to your legal rights and further accessibiltiy infomation.
+    Create a step by step letter that will be sent to the applicable venue. 
+  authors:
+    - name: Ella Hunter
+    - name: Gemma Collins-Little
+    - name: Vanessa Irvine 
+    - name: Ismadi Bin Jaarfar
+  organisation: Flinders University
+  show login: False
+---
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: center">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with South Australian Equal Opportunity Commission
+    </i></small></cite>
+    </div>
+    </div>
+---
+image sets:
+  docassemble:
+    attribution: |
+      This is the image attribution.
+    images:
+      star: star.svg
+---
 objects:
   - EOClogo: DAStaticFile.using(filename='EOC_logo.jpg')
 ---
@@ -32,19 +67,16 @@ subquestion: |
   **Welcome to the Equal Opportunity Commission's** 
   **Disability Access Service**
   
-    This program has been designed so that you may easily and anonymously
-    contact venues about your experience of an accessibility problem.
+    This program has been designed so that people living with 
+    a disability can contact venues if they experience an accessibility issue.
 
 
-  **This service will assist you to:**
+  **This service will help you to:**
   
-   - 	Send a letter notifying venues they have legal obligations to provide  access for people with disabilities,
+   * Produce and send a letter to venues, reminding them of your legal right to access, and,
    
-   - 	Download a PDF copy of this document,
+   * Seek information about your rights and venue obligations in South Australian law 
    
-   -	View legal information about your rights to venue access as per current South Australian law, and
-   
-   - View information about venues' obligations under the disability access laws of *The Equal Opportunity Act 1984 (SA)*.
 
 css: |
   <style>
@@ -61,17 +93,30 @@ buttons:
 ---
 mandatory: True 
 question:  |
-  Disclaimer:
+  Here are your options:
 subquestion: | 
-  **This service is not to be taken as a subsitute to formal legal advice.**
   
-  The letter you may choose to submit is not the same as a formal complaint made through the Equal Opportunity Commission. 
-    
-  **If you wish to make a formal complaint to the Equal Opportunity Commission,**
-  please click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to the online complaint service. 
+  [BOLDCENTER]OPTION 1: [BR][CENTER]Use this service to create a letter to the venue
+  
+  If you want to send a letter, you will need to fill out a questionnaire.
+  You will need to provide:
+  
+  * Your name,
+  * The full name and email address of the venue, and 
+  * Basic details about the access issue experienced. 
  
+  Details about the venue can be searched up on the internet before you use this service. 
+  
+  [BR]
+  [BOLDCENTER]OPTION 2: [BR][CENTER]Make a formal complaint with the Equal Opportunity Commission
+  
+  If you want to make a formal complaint to the Equal Opportunity Commission,
+  click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to their complaint service. 
+  
+  [BR]
+
 buttons: 
-  - I accept and wish to continue: continue 
+  - Continue to the questionnaire: continue 
   - Exit: exit
     url: https://eoc.sa.gov.au
 ---

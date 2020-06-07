@@ -11,13 +11,13 @@ subquestion: |
   **Information check**
   
   This is your final opportunity to ensure all the information provided is correct. 
-  
+  You may edit this information if necessary. 
+
+
    ${ publicquestion_table } 
    
    
-   You may edit this information above if necessary. 
-   
-   Otherwise, once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
+   Once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
 
 progress: 90
 continue button field: ee_q1
@@ -52,6 +52,7 @@ buttons:
 event: endpoint['endpoint_1']
 question: Information for Venues (Disability Access)
 subquestion: |
+  ## This is an unfinished part of the service. Team still editing.
   **This is a brief summary of your obligations as a venue owner/manager.**
  
   To recieve a more comprehensive factsheet on the relelvant law, download the PDF file attatched below. 
@@ -110,6 +111,7 @@ buttons:
 event: endpoint['ineligible']
 question: Information regarding your rights under law
 subquestion: |
+  ## This is an unfinished part of the service. Team still editing.
   **Below is information regarding your rights** 
  
   - The infomation provided below is not to be taken as formal legal adivice. 
@@ -133,6 +135,7 @@ buttons:
 event: endpoint['link_page']
 question: Hello,
 subquestion: |
+  ## This is an unfinished part of the service. Team still editing.
   **Currently, this application is only for:**
  
   1) Assisting individuals with diabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 

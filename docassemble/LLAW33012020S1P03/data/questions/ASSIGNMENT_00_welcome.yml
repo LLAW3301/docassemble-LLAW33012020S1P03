@@ -1,14 +1,50 @@
 ---
+metadata:
+  title: |
+    Equal Opportunity Commission Access Alert Letter
+  short title: |
+    Disability Access Letter 
+  description: |
+    Access to your legal rights and further accessibiltiy infomation.
+    Create a step by step letter that will be sent to the applicable venue. 
+  authors:
+    - name: Ella Hunter
+    - name: Gemma Collins-Little
+    - name: Vanessa Irvine 
+    - name: Ismadi Bin Jaarfar
+  organisation: Flinders University
+  show login: False
+---
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: center">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with South Australian Equal Opportunity Commission
+    </i></small></cite>
+    </div>
+    </div>
+---
+image sets:
+  docassemble:
+    attribution: |
+      This is the image attribution.
+    images:
+      star: star.svg
+---
 objects:
   - EOClogo: DAStaticFile.using(filename='EOC_logo.jpg')
 ---
 mandatory: True
 code: |
   set_parts(logo='<img src="' + EOClogo.url_for() + '" style="height: 50px;">')
+
 ---
 features:
   css: Assignment_designs.css
-  debug: True
+  debug: False
   hide standard menu: False
 ---
 # Testing: features
@@ -21,10 +57,14 @@ features:
 features:
   bootstrap theme: lumen.min.css
 ---
+
 include:
   - ASSIGNMENT_01_main_endpoints.yml
   - ASSIGNMENT_02_questions_initial.yml
   - ASSIGNMENT_03_questions_public.yml
+---
+features: 
+  debug: False
 ---
 mandatory: True 
 question: Welcome,

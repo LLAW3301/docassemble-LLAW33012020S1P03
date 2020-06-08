@@ -12,12 +12,13 @@ subquestion: |
 
   Look at the information you provided to make sure it is all correct. 
   
+  You can edit the information you entered here. 
+  
    ${ publicquestion_table } 
    
+
    
-   Here you can change the information you entered. 
-   
-   **Important:** Otherwise, once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
+   **Important:** Once you continue to the next page, the letter will be formatted and automatically emailed to **${ title_case(target_venue) }** via **${ target_email }**.
 
 progress: 90
 continue button field: ee_q1
@@ -29,25 +30,23 @@ question: |
   
   **Your letter has been created and sent to ${ target_venue }.**
   
-  Below is the letter which has been made to send to the
+  Below is the letter which has been made and sent to the
   venue via their email address.
   
   We also encourage you to download it for yourself.
   
-  
-  *Thank you for using this service, we hope this has been beneficial to you.*
-  
-   If you need more information, please click [here](https://eoc.sa.gov.au/) to access the **Equal Opportunity Commission** Homepage. 
+  *As this letter acts as a notification to the venue, the venue will not responded to your email.*
+
+
+  If you need more information or want to make a formal complaint, please click [HERE](https://eoc.sa.gov.au/) to go to the **Equal Opportunity Commission** Homepage. 
    
-   You can also access the homepage of **Purple Orange**, where you can find more information and opportunities regarding living with a disability, by clicking [here](https://www.purpleorange.org.au/).
+   **Purple Orange** is an organisation which provides more information about the rights of those living with a disability. To visit their homepage, click [HERE](https://www.purpleorange.org.au/).
 
 
-  *This letter is a notification to the venue, and will not be responded to.*
-  *Unlike the letter, a formal complaint will require the venue to respond* 
-  - FIX
+  [BR] *Thank you for using this service.*
   
 attachment:
- docx template file: Templateletter_7_june.docx
+ docx template file: Access_alert_letter_EOC.docx
  valid formats:
       - pdf
 progress: 100
@@ -103,7 +102,7 @@ subquestion: |
 
 progress: 100
 attachment:
-  docx template file: T3.docx
+  docx template file: Disability_Access_Law_Factsheet_venue.docx
 buttons:
  - Finish: exit
    url: https://eoc.sa.gov.au/
@@ -131,28 +130,7 @@ subquestion: |
   **follow this link to the EOC page:** [click here](https://eoc.sa.gov.au/).
   
 attachment:
-  docx template file: T2.docx
-progress: 100
-buttons:
- - Exit: exit
-   url: https://eoc.sa.gov.au/
- - Restart: restart
----
-# This an "error" endpoint: IF user of software shoudn't be using it  
-# UNFINISHED (needs refining)
-
-event: endpoint['link_page']
-question: Hello,
-subquestion: |
-  ## This is an unfinished part of the service. Team still editing.
-  **Currently, this application is only for:**
- 
-  1) Assisting individuals with disabilities in notifying venues of an issue with accessibility without needing to undertake the formal complaint process, and, 
-  
-  2) Providing information for both individuals and venues regarding disability rights and obligations on public premises. 
-  
-  If you need more information, please click [here](https://eoc.sa.gov.au/) to access the Equal Opportunity Homepage.
-
+  docx template file: Disability_Access_Factsheet_public.docx
 progress: 100
 buttons:
  - Exit: exit

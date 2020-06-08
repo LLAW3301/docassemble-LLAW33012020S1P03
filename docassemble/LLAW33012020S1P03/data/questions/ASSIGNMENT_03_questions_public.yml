@@ -9,7 +9,7 @@ choices:
   - On behalf of someone else
 
 under: |
-  **Please note:** [BR] *If you are creating this letter for someone else, you must fill out this questionnaire as the individual who experienced the issue. [BR] This is best to do in their presence. Do not disclose their personal details, such as name or specifics of disability(ies), without their consent.*
+  **If creating for someone else:** [BR] *You must fill out this questionnaire as the individual who experienced the issue. This is best to do in their presence. [BR] Do not disclose their personal details, such as name or specifics of disability(ies), without their consent.*
   
 progress: 10
 back button: True
@@ -102,41 +102,26 @@ back button: True
 # Finished
 question: Creating your Disability Access Letter 
 subquestion: |
-  % if position_of_complainant == 'For myself':
-  Please select which category best reflects how you encountered an issue at ${ title_case(target_venue) }. 
-  % elif position_of_complainant == 'On behalf of someone else':
-  Please select which category best reflects how the individual encountered an issue at ${ title_case(target_venue) }.
-  % endif
+  Please select the choice that best reflects the issue encountered at ${ title_case(target_venue) }. 
 
 field: incident_type
 choices: 
    - I was unable to enter the premises: could not enter
    - I experienced issue(s) once inside the premises: encountered an issue once inside,
+   - All of the above: could not enter and encountered an issue once inside,
 progress: 60  
 back button: True
 ---
 # QUESTIONAIRE PART 6: general access issues
-# UNFINISHED: NEED terms here too: 
-# Physical access: Including physical disfigurement or impairment/ disab, work-related injuries,  medical conditions (e.g. diabetes), 
-# those that require the use of a mobility aid, presence of the body of organisms causing disease
-
-# Auditory or visual difficulties: including those of hearing impairment, deafness, vision impairement or blindness. AND intellectual disabilties 
-
-# Sensory difficulties: The absence of sensory acommodations can affect people with varying types of disabilities, especially those with neurological disorders such as Epilepsy, Sensory Processing Disorder, ASD and ADHD.*
-
-# General discrimination: applies to all disabiltiies, visible or not. Can apply to both individuals with disabilities and Carer/Associates 
-
-# NEED: FIX "other" option, allow in Jinja AND table
-# UNFINISHED
-
 question: Creating your Disability Access Letter  
 subquestion: |
-  % if position_of_complainant == 'For myself':
+  % if position_of_complainant == 'Myself':
   **What type of issue did you encounter at**
   **${ title_case(target_venue) }?** 
   % elif position_of_complainant == 'On behalf of someone else':
   **What type of issue did the individual encounter at ${ title_case(target_venue) }?** 
   % endif
+   
 fields:
   - "Select **all** which are applicable": access_issue_general
     datatype: checkboxes 
@@ -145,13 +130,19 @@ fields:
       - Visual assistance
       - Auditory assistance
       - Sensory accommodations
+      - Assistance animal accommodations
       - General discriminatory attitude
-      - Intellectual assistance
-      - Assistance animal issue
     none of the above: False
-  - "Other": access_issue_other
-    hint: Optional
-    required: False
+
+under: |
+  **If you are unsure which options to select, see the terms below**
+  
+  * {Physical access issues} 
+  * {Access to audiovisual aids}
+  * {Sensory accommodations}
+  * {Assistance animal accommodations}
+  * {General discriminatory attitudes etc.} [BR][BR]
+
 progress: 70
 back button: True
 ---
@@ -163,7 +154,7 @@ question: Creating your Disability Access Letter
 subquestion: | 
   **How did the venue fail to provide adequate access?**
   
-  % if position_of_complainant == 'For myself':
+  % if position_of_complainant == 'Myself':
   This is an opportunity for you to explain how
   this venue did not cater to the needs of your disability. [BR][BR]
   *If you are unsure on what to say, click on the words below for definitions and potential examples:*
@@ -177,6 +168,7 @@ subquestion: |
   * {Physical access issues} 
   * {Access to audiovisual aids}
   * {Sensory accommodations}
+  * {Assistance animal accommodations}
   * {General discriminatory attitudes etc.} [BR][BR]
   
 fields:
@@ -201,6 +193,8 @@ terms:
     * Insufficient seating (whether difficult to access or a lack of sufficient seating altogether)
     
     * Denial of entry for reasons such as being accompanied by an assistance animal
+    
+    * And any other forms of issues which physically prevent those living with a disability to enjoy the access or use of public venues. 
 
   Access to audiovisual aids: |
     **This includes, but is not limited to:**
@@ -230,6 +224,21 @@ terms:
     * Favouritism over others on the grounds of your having a disability
     
     * Any type of harrassment, derogatory comments or other verbal abuse based on your disability
+  
+  
+  Assistance animal accommodations: |
+    Assistance animals, sometimes called 'service animals', include:
+    
+    * Dogs trained to perform daily personal tasks or mobility assistance such as for those with physical conditions,
+    
+    * Guide dogs, also known as 'seeing eye' dogs, who assist those with vision impariement,
+    
+    * Hearing dogs to assist people with hearing impairments;
+    
+    * Medical alert dogs, such as those who assist people with epilepsy or diabetes; 
+    
+    * Psychiatric service dogs to reduce anxiety and assist in social relationships.
+
 ---
 # TABLE
 # FINISHED
@@ -237,7 +246,7 @@ variable name: publicperson_info
 use objects: True
 data:
   - category: Letter made
-    response: ${ position_of_complainant }
+    response: ${ position_of_complainant_table }
   - category: Confidentiality
     response: ${ display_name }
   - category: Name
@@ -252,8 +261,6 @@ data:
     response: ${ incident_type_table }
   - category: Issues to Access that Occured
     response: ${ access_issue_general.true_values() }
-  - category: Other Access Issue
-    response: ${ access_issue_other }
   - category: Personal statement of ${ public_salutation } ${ public_lastname }
     response: ${ access_issue_specific }
 ---
@@ -273,8 +280,13 @@ code: |
   elif incident_type == 'encountered an issue once inside,':
     incident_type_table = 'Issue encountered once inside'
   elif incident_type == 'could not enter and encountered an issue once inside,':
-    incident_type_table = 'Could not enter the venue, and an issue was encountered once inside'
-
+    incident_type_table = 'Could not enter the venue, and experienced an issue was encountered once inside'
+---
+code: |
+  if position_of_complainant == 'Myself':
+    position_of_complainant_table = 'By myself'
+  elif position_of_complainant == 'On behalf of someone else':
+    position_of_complainant_table = 'On behalf of someone else'
 ---
 table: publicquestion_table
 rows: publicperson_info

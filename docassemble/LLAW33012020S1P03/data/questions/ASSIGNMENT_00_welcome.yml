@@ -96,7 +96,7 @@ question:  |
   Here are your options:
 subquestion: | 
   
-  [BOLDCENTER]OPTION 1: [BR][CENTER]Use this service to create a letter to the venue
+  **OPTION 1:** [BR]**Use this service to create a letter to the venue.**
   
   If you want to send a letter, you will need to fill out a questionnaire.
   You will need to provide:
@@ -108,7 +108,7 @@ subquestion: |
   Details about the venue can be searched up on the internet before you use this service. 
   
   [BR]
-  [BOLDCENTER]OPTION 2: [BR][CENTER]Make a formal complaint with the Equal Opportunity Commission
+  **OPTION 2:** [BR]**Make a formal complaint with the Equal Opportunity Commission**
   
   If you want to make a formal complaint to the Equal Opportunity Commission,
   click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to their complaint service. 

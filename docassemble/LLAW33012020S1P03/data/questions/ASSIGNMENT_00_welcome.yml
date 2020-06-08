@@ -43,7 +43,7 @@ code: |
 ---
 features:
   css: Assignment_designs.css
-  debug: True
+  debug: False
   hide standard menu: False
 ---
 # Testing: features

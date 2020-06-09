@@ -35,7 +35,7 @@ image sets:
       star: star.svg
 ---
 objects:
-  - EOClogo: DAStaticFile.using(filename='EOC_logo.jpg')
+  - EOClogo: DAStaticFile.using(filename='EOC_logo_1.jpg')
 ---
 mandatory: True
 code: |

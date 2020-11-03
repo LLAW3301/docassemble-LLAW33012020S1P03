@@ -1,0 +1,138 @@
+---
+metadata:
+  title: |
+    Equal Opportunity Commission Access Alert Letter
+  short title: |
+    Disability Access Letter 
+  description: |
+    Access to your legal rights and further accessibiltiy infomation.
+    Create a step by step letter that will be sent to the applicable venue. 
+  authors:
+    - name: Ella Hunter
+    - name: Gemma Collins-Little
+    - name: Vanessa Irvine 
+    - name: Ismadi Bin Jaarfar
+  organisation: Flinders University
+  show login: False
+---
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: center">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with South Australian Equal Opportunity Commission
+    </i></small></cite>
+    </div>
+    </div>
+---
+image sets:
+  docassemble:
+    attribution: |
+      This is the image attribution.
+    images:
+      star: star.svg
+---
+objects:
+  - EOClogo: DAStaticFile.using(filename='EOC_logo.jpg')
+---
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + EOClogo.url_for() + '" style="height: 50px;">')
+---
+features:
+  css: Assignment_designs.css
+  debug: False
+  hide standard menu: False
+---
+# Testing: features
+features:
+  progress bar: True
+  show progress bar percentage: True
+  navigation: True
+  hide standard menu: True
+---
+features:
+  bootstrap theme: lumen.min.css
+---
+include:
+  - ASSIGNMENT_01_main_endpoints.yml
+  - ASSIGNMENT_02_questions_initial.yml
+  - ASSIGNMENT_03_questions_public.yml
+---
+mandatory: True 
+question: Welcome,
+subquestion: | 
+  **Welcome to the Equal Opportunity Commission's** 
+  **Disability Access Service**
+  
+    This program has been designed so that people living with 
+    a disability can contact venues if they experience an accessibility issue.
+
+
+  **This service will help you to:**
+  
+   * Produce and send a letter to venues, reminding them of your legal right to access, and,
+   
+   * Seek information about your rights and venue obligations in South Australian law 
+   
+
+css: |
+  <style>
+    body {
+      background-image: url();
+      background-repeat: repeat;
+    }
+  </style>
+
+buttons: 
+  - Next: continue 
+  - Exit: exit
+    url: https://eoc.sa.gov.au
+---
+mandatory: True 
+question:  |
+  Here are your options:
+subquestion: | 
+  
+  **OPTION 1:** [BR]**Use this service to create a letter to the venue.**
+  
+  If you want to send a letter, you will need to fill out a questionnaire.
+  You will need to provide:
+  
+  * Your name,
+  * The full name and email address of the venue, and 
+  * Basic details about the access issue experienced. 
+ 
+  Details about the venue can be searched up on the internet before you use this service. 
+  
+  [BR]
+  **OPTION 2:** [BR]**Make a formal complaint with the Equal Opportunity Commission**
+  
+  If you want to make a formal complaint to the Equal Opportunity Commission,
+  click [here](https://eoc.sa.gov.au/what-discrimination/making-complaint) and you will be directed to their complaint service. 
+  
+  [BR]
+
+buttons: 
+  - Continue to the questionnaire: continue 
+  - Exit: exit
+    url: https://eoc.sa.gov.au
+---
+objects:
+  - endpoint: DADict
+---
+# This code block drives endpoints
+mandatory: True
+code: |
+  if who_is_user == 'user_is_venue':
+    endpoint['endpoint_1']
+  elif who_is_user == 'user_is_public':
+    if purpose == 'req_informal_complaint':
+      endpoint['eligible']
+    elif purpose == 'req_public_info':
+      endpoint['ineligible'] 
+    else:
+      endpoint['link_page']
+---

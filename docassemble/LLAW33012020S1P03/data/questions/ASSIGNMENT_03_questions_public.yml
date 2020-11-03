@@ -1,0 +1,330 @@
+---
+# QUESTIONAIRE PART 1: WHO FILING FOR
+question: Creating your Disability Access Letter
+subquestion: |
+  **Who are you wanting to make this access letter for?** 
+field: position_of_complainant
+choices: 
+  - Myself
+  - On behalf of someone else
+
+under: |
+  **If creating for someone else:** [BR] *You must fill out this questionnaire as the individual who experienced the issue. This is best to do in their presence. [BR] Do not disclose their personal details, such as name or specifics of disability(ies), without their consent.*
+  
+progress: 10
+back button: True
+---
+# DOCUMENT QUESTIONAIRE PART 1.5: Confidentiality
+#UNFINISHED
+question: Creating your Disability Access Letter
+subquestion: |  
+  **Confidentiality**
+   
+  % if position_of_complainant == 'Myself':
+  Your name will **not** be given to others without your consent.
+  
+  However, you can choose to have your prefix and last name included in this letter. 
+  
+  **Do you want to do this?**
+  % elif position_of_complainant == 'On behalf of someone else':
+  The individual's name will **not** be given to others without your consent.
+  
+  However, they can choose to have their preferred prefix and last name included in this letter. 
+  
+  **Do they want to do this?**
+  % endif
+  
+field: name_use
+choices:
+ - Yes, I want to use my name in this letter: name_attached
+ - No, I would like to remain anonynous: name_anonymous 
+progress: 20
+back button: True
+---
+# QUESTIONAIRE PART 2
+# Finished
+question: Creating your Disability Access Letter
+subquestion: |
+   **Name**
+   
+   % if position_of_complainant == 'Myself':
+   Please state your name. 
+   % elif position_of_complainant == 'On behalf of someone else':
+   Please state the name of the affected person.
+   % endif
+
+fields:
+  - Prefix: public_salutation
+    choices:
+    - Mr
+    - Mrs
+    - Ms
+    - Miss
+    - Mx
+    - Dr 
+    html: |
+      <span style="">Note: Mx is a gender-neutral prefix.</span>
+    default: Mr
+  - First Name: public_firstname
+    default: John
+  - Last Name: public_lastname
+    default: Smith
+
+progress: 30
+back button: True
+---
+# QUESTIONAIRE PART 3
+# Finished
+
+question: Creating your Disability Access Letter
+subquestion: |
+  **Which venue do you wish to contact about this issue?**
+fields:
+  - Name of Venue: target_venue
+    default: Example Venue 
+  - E-mail of Venue: target_email
+    default: example_venue@hotmail.com
+    datatype: email
+    hint: venue@example.com
+
+progress: 40
+back button: True
+---
+# Questionnaire part 4: Date of incident
+# UNFINISHED
+question: Date Incident Occurred
+subquestion: |
+  When did the incident occur?
+  
+  Please use the *dd/mm/yyyy* format. 
+fields:
+  - Date: date_incident
+    datatype: date
+    default: 03/04/2020
+progress: 50
+back button: True
+---
+# QUESTIONAIRE PART 5: "what happened"
+# Finished
+question: Creating your Disability Access Letter 
+subquestion: |
+  Please select the choice that best reflects the issue encountered at ${ title_case(target_venue) }. 
+
+field: incident_type
+choices: 
+   - I was unable to enter the premises: could not enter
+   - I experienced issue(s) once inside the premises: encountered an issue once inside,
+   - All of the above: could not enter and encountered an issue once inside,
+default: I was unable to enter the premises
+progress: 60  
+back button: True
+---
+# QUESTIONAIRE PART 6: general access issues
+question: Creating your Disability Access Letter  
+subquestion: |
+  % if position_of_complainant == 'Myself':
+  **What type of issue did you encounter at**
+  **${ title_case(target_venue) }?** 
+  % elif position_of_complainant == 'On behalf of someone else':
+  **What type of issue did the individual encounter at ${ title_case(target_venue) }?** 
+  % endif
+   
+fields:
+  - "Select **all** which are applicable": access_issue_general
+    datatype: checkboxes 
+    choices:
+      - Physical access
+      - Visual assistance
+      - Auditory assistance
+      - Sensory accommodations
+      - Assistance animal accommodations
+      - General discriminatory attitude
+    none of the above: False
+
+under: |
+  **If you are unsure which options to select, see the terms below**
+  
+  * {Physical access issues} 
+  * {Access to audiovisual aids}
+  * {Sensory accommodations}
+  * {Assistance animal accommodations}
+  * {General discriminatory attitudes etc.} [BR][BR]
+
+progress: 70
+back button: True
+---
+# DOCUMENT QUESTIONAIRE PART 7: specific access issue
+# NEEDS: MORE terms information 
+# UNFINISHED
+
+question: Creating your Disability Access Letter  
+subquestion: | 
+  **How did the venue fail to provide adequate access?**
+  
+  % if position_of_complainant == 'Myself':
+  This is an opportunity for you to explain how
+  this venue did not cater to the needs of your disability. [BR][BR]
+  *If you are unsure on what to say, click on the words below for definitions and potential examples:*
+  
+  % elif position_of_complainant == 'On behalf of someone else':
+  This is an opportunity for the individual to explain how
+  this venue did not cater to the needs of their disability. [BR][BR]
+  *If they are unsure on what to say, click on the words below for definitions and potential examples:*
+  % endif
+  
+  * {Physical access issues} 
+  * {Access to audiovisual aids}
+  * {Sensory accommodations}
+  * {Assistance animal accommodations}
+  * {General discriminatory attitudes etc.} [BR][BR]
+  
+fields:
+  - no label: access_issue_specific
+    input type: area 
+    default: I was unable to enter the premises due to the lack of ramps; the only entrance had stairs. I use a wheelchair and therefore could not enter the premises. 
+    hint: Please note, this personal account will be included in the letter to the venue.
+progress: 80
+back button: True
+--- 
+# Questionnaire part 7 TERMS
+# Finished
+terms:
+  Physical access issues: |
+    **This includes, but is not limited to:** 
+    
+    * Issues when using a mobility aid (e.g. walking frame or wheelchair)
+
+    * Lack of ambulant toilets
+    
+    * Blocked or *no* ramps (or other access aids)
+    
+    * Insufficient seating (whether difficult to access or a lack of sufficient seating altogether)
+    
+    * Denial of entry for reasons such as being accompanied by an assistance animal
+    
+    * And any other forms of issues which physically prevent those living with a disability to enjoy the access or use of public venues. 
+
+  Access to audiovisual aids: |
+    **This includes, but is not limited to:**
+    
+    * Lack of appropriate signs for bathrooms, lifts or emergency procedures etc.
+    
+    * No hearing loop systems/  other measures to facilliate sound control (soundproofing panels etc.)
+
+  Sensory accommodations: |
+    **This includes, but is not limited to:**
+    
+    * Sound sensitibity, such as to loud noises,
+    
+    * Light sensitivity, such as to flickering or bright lighting,
+    
+    * Smell sensitivity,
+    
+    * Cognitive sensitivity, such as to proximitity to others and difficulties in tight spaces,
+    
+    * Or any other sensory issues which may result in the individual experiencing sensory overload.
+  
+  General discriminatory attitudes etc.: | 
+    **This includes, but is not limited to:**
+    
+    * Rudeness or refusal to assist you on the basis of your disability
+        
+    * Favouritism over others on the grounds of your having a disability
+    
+    * Any type of harrassment, derogatory comments or other verbal abuse based on your disability
+  
+  
+  Assistance animal accommodations: |
+    Assistance animals, sometimes called 'service animals', include:
+    
+    * Dogs trained to perform daily personal tasks or mobility assistance such as for those with physical conditions,
+    
+    * Guide dogs, also known as 'seeing eye' dogs, who assist those with vision impariement,
+    
+    * Hearing dogs to assist people with hearing impairments;
+    
+    * Medical alert dogs, such as those who assist people with epilepsy or diabetes; 
+    
+    * Psychiatric service dogs to reduce anxiety and assist in social relationships.
+
+---
+# TABLE
+# FINISHED
+variable name: publicperson_info
+use objects: True
+data:
+  - category: Letter made
+    response: ${ position_of_complainant_table }
+  - category: Confidentiality
+    response: ${ display_name }
+  - category: Name
+    response: ${ public_salutation } ${ public_firstname } ${ public_lastname }
+  - category: Venue
+    response: ${ title_case(target_venue) }
+  - category: Venue email
+    response: ${ target_email }
+  - category: Date of Occurence 
+    response: ${ date_incident }
+  - category: Nature of Incident
+    response: ${ incident_type_table }
+  - category: Issues to Access that Occured
+    response: ${ access_issue_general.true_values() }
+  - category: Personal statement of ${ public_salutation } ${ public_lastname }
+    response: ${ access_issue_specific }
+---
+# Table confidentiality CODE
+# finished
+code: |
+  if name_use == 'name_anonymous':
+    display_name = 'Name to be kept anonymous'
+  elif name_use == 'name_attached':
+    display_name = 'Name to be attached to letter'
+---
+# Table incident type CODE
+# finished
+code: |
+  if incident_type == 'could not enter':
+    incident_type_table = 'Could not enter the venue'
+  elif incident_type == 'encountered an issue once inside,':
+    incident_type_table = 'Issue encountered once inside'
+  elif incident_type == 'could not enter and encountered an issue once inside,':
+    incident_type_table = 'Could not enter the venue, and experienced an issue was encountered once inside'
+---
+code: |
+  if position_of_complainant == 'Myself':
+    position_of_complainant_table = 'By myself'
+  elif position_of_complainant == 'On behalf of someone else':
+    position_of_complainant_table = 'On behalf of someone else'
+---
+table: publicquestion_table
+rows: publicperson_info
+columns:
+  - Category: |
+      row_item['category']
+  - Response: |
+      row_item['response']     
+edit: 
+  - elements['response']
+delete buttons: False
+---
+code: |
+  publicperson_info.there_is_another = False
+---
+question: |
+  Edit ${ publicperson_info[i]['category']}
+fields:
+  - Response: publicperson_info[i].elements['response']
+---
+question: |
+ Is the information below correct for ${ publicperson_info[i]['Name'] }?
+fields:
+ - no label: publicperson_info[i]['publicanswers']
+   datatype: checkboxes
+   code: publicperson_info[i]['publicchoices']
+---
+code: |
+ publicperson_info[i]['publicchoices'] = []
+ for publickey in publicperson_info[i]:
+  if publickey != 'publicchoices':
+   publicperson_info[i]['publicchoices'].append('**{}:** {}' .format(publickey, publicperson_info[i][publickey]))   
+---

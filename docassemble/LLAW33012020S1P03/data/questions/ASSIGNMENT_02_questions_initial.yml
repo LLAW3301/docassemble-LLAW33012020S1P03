@@ -1,0 +1,25 @@
+---
+question: Details of the User 
+subquestion: |
+  Why are you using this service? 
+field: who_is_user
+choices:
+  - I am a member of the public: user_is_public
+  - I am a venue owner or employee: user_is_venue
+  
+---
+# UNFINISHED: NEED notes to appear only if ticked. Ella could not get to work
+question: Purpose of visit to site
+subquestion: |
+  **For what reason are you using this service?**
+field: purpose
+choices:
+  - I want to notify a venue of a disability access issue: req_informal_complaint
+  - I want to receive more information about my rights: req_public_info
+
+under: |
+  *The* **"notify a venue"** *option will take you to a questionnaire, asking how your rights to access were affected on the grounds of your disability. [BR][BR] The* **"receive more information"** *option will take you to downloadable information about your rights under anti-discrimination law.*
+
+
+back button: True
+---

@@ -1,0 +1,122 @@
+---
+event: endpoint['eligible']
+code: |
+  ee_q1
+  ee_q2
+---
+# DOCUMENT QUESTIONAIRE PART 9:
+# NEEDS: progress bar 
+question: Creating your Disability Access Letter
+subquestion: |
+  **Information check**
+
+  Look at the information you provided to make sure it is all correct. 
+  
+  You can edit the information you entered here. 
+  
+   ${ publicquestion_table } 
+   
+
+   
+   **Important:** Once you continue to the next page, you will be able to email the letter will to **${ title_case(target_venue) }** via **${ target_email }**.
+
+progress: 90
+continue button field: ee_q1
+---
+event: ee_q2
+# ENDPOINT for access alert
+question: |
+  ## Hello ${ public_salutation +' '+ public_lastname },  
+  
+  **Your letter has been created, see the bottom of this screen to send it to ${ target_venue }.**
+  
+  Below is the letter which has been made to send to the
+  venue: We also encourage you to download it for yourself.
+  
+  *As this letter acts as a notification to the venue, the venue will not responded to your email.*
+
+
+  If you need more information or want to make a formal complaint, please click [HERE](https://eoc.sa.gov.au/) to go to the **Equal Opportunity Commission** Homepage. 
+   
+   **Purple Orange** is an organisation which provides more information about the rights of those living with a disability. To visit their homepage, click [HERE](https://www.purpleorange.org.au/).
+
+
+  [BR] *Thank you for using this service.*
+  
+  
+  [BR]
+  **To send this to ${ title_case(target_venue) }, please enter "${ target_email }" in the email box below and click send**.
+attachment:
+ docx template file: Access_alert_letter_EOC.docx
+ valid formats:
+      - pdf
+progress: 100
+buttons:
+ - Finish: exit
+   url: https://eoc.sa.gov.au/
+ - Restart form: restart
+---
+template: notification
+subject: |
+  Greetings, ${ target_venue }
+content: |
+  This is an e-mail sent from a
+  **docassemble** interview.
+   
+  Have a nice day!
+---
+# endpoint for venues recieving information 
+# finished
+event: endpoint['endpoint_1']
+question: Disability Access Information for Venues
+subquestion: |
+  **This is a brief summary of the obligations of venues.**
+  
+  Venues must provide safe and suitable access to everyone without discrimination, including to those with a disability.  
+  
+  They must also provide goods and services without discrimination, and cannot implement unfair or unreasonable terms and conditions to the access to or use of goods on the premises. 
+  
+  However, in circumstances where providing such goods or services constitutes unjustifiable hardship such as incurring unreasonable cost, time and effort versus overall benefits, venues may be given exemption from such an obligation.
+  
+  [BR]
+  To receive a more comprehensive factsheet on the relevant law, download the PDF file attached below. 
+
+
+progress: 100
+attachment:
+ docx template file: Disability_Access_Law_Factsheet_venue.docx
+ valid formats:
+      - pdf 
+
+buttons:
+ - Finish: exit
+   url: https://eoc.sa.gov.au/
+ - Restart form: restart
+---
+# ENDPOINT for public information
+event: endpoint['ineligible']
+question: Disability Access Information; your rights under law
+subquestion: |
+  Venues must provide safe and suitable access to everyone without discrimination, including to those with a disability.  
+  
+  They must also provide goods and services without discrimination, and cannot implement unfair or unreasonable terms and conditions to the access to or use of goods on the premises. 
+  
+  If you feel you have been discriminated against on the basis of your disability, you have the option to make a formal complaint to the Equal Opportunity Commission.
+  
+  If you need more information or want to make a formal complaint, 
+  please click [HERE](https://eoc.sa.gov.au/) to go to the **Equal Opportunity Commission** Homepage. 
+   
+   
+  **Otherwise, please click on the document below to view more information about your rights in public premises. You may download this information if you wish.** 
+
+
+attachment:
+ docx template file: Disability_Access_Factsheet_public.docx
+ valid formats:
+      - pdf
+progress: 100
+buttons:
+ - Exit: exit
+   url: https://eoc.sa.gov.au/
+ - Restart: restart
+---

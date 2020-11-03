@@ -20,7 +20,7 @@ default screen parts:
     <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
     <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
     </div>
-    <div style="margin: 5px; text-align: center">
+    <div style="margin: 5px; text-align: right">
     <cite><small><i>
     Developed by Flinders University in collaboration with South Australian Equal Opportunity Commission
     </i></small></cite>
@@ -62,21 +62,15 @@ include:
   - ASSIGNMENT_03_questions_public.yml
 ---
 mandatory: True 
-question: Welcome,
+question: Disability Access Service
 subquestion: | 
-  **Welcome to the Equal Opportunity Commission's** 
-  **Disability Access Service**
   
-    This program has been designed so that people living with 
-    a disability can contact venues if they experience an accessibility issue.
+  If you feel that you have been discriminated against at a venue,
+  you can use this app to alert the venue that you were discriminated
+  against and remind them of their legal obligations to treat you fairly.
 
-
-  **This service will help you to:**
-  
-   * Produce and send a letter to venues, reminding them of your legal right to access, and,
-   
-   * Seek information about your rights and venue obligations in South Australian law 
-   
+  You can also use this application to find out information about your legal
+  rights under South Australian law. 
 
 css: |
   <style>

@@ -9,7 +9,11 @@ choices:
   - On behalf of someone else
 
 under: |
-  **If creating for someone else:** [BR] *You must fill out this questionnaire as the individual who experienced the issue. This is best to do in their presence. [BR] Do not disclose their personal details, such as name or specifics of disability(ies), without their consent.*
+  **If creating for someone else:** [BR]
+  *You must fill out this questionnaire as the individual who experienced the issue. 
+  This is best to do in their presence. [BR] 
+  Do not disclose their personal details, such as name or specifics
+  of disability(ies), without their consent.*
   
 progress: 10
 back button: True

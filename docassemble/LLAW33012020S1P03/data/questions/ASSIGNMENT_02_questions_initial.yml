@@ -14,12 +14,18 @@ subquestion: |
   **For what reason are you using this service?**
 field: purpose
 choices:
-  - I want to notify a venue of a disability access issue: req_informal_complaint
+  - Tell a venue about a disability access issue: req_informal_complaint
   - I want to receive more information about my rights: req_public_info
 
 under: |
-  *The* **"notify a venue"** *option will take you to a questionnaire, asking how your rights to access were affected on the grounds of your disability. [BR][BR] The* **"receive more information"** *option will take you to downloadable information about your rights under anti-discrimination law.*
+  If you choose *Tell a venue about a disability access issue*, 
+  we will ask you more about the problem with the venue's access
+  when you click on *Next*.
 
+  If you choose *I want to receive more information about my rights*,
+  we will take you to a page where you can download some information
+  about your rights under anti-discrimination law.
+ 
 
 back button: True
 ---

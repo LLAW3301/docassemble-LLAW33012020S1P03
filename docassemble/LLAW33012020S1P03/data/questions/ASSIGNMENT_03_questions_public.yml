@@ -64,11 +64,8 @@ fields:
     - Dr 
     html: |
       <span style="">Note: Mx is a gender-neutral prefix.</span>
-    default: Mr
   - First Name: public_firstname
-    default: John
   - Last Name: public_lastname
-    default: Smith
 
 progress: 30
 back button: True
@@ -81,9 +78,7 @@ subquestion: |
   **Which venue do you wish to contact about this issue?**
 fields:
   - Name of Venue: target_venue
-    default: Example Venue 
   - E-mail of Venue: target_email
-    default: example_venue@hotmail.com
     datatype: email
     hint: venue@example.com
 
@@ -100,7 +95,6 @@ subquestion: |
 fields:
   - Date: date_incident
     datatype: date
-    default: 03/04/2020
 progress: 50
 back button: True
 ---
@@ -115,7 +109,6 @@ choices:
    - I was unable to enter the premises: could not enter
    - I experienced issue(s) once inside the premises: encountered an issue once inside,
    - All of the above: could not enter and encountered an issue once inside,
-default: I was unable to enter the premises
 progress: 60  
 back button: True
 ---
@@ -181,7 +174,6 @@ subquestion: |
 fields:
   - no label: access_issue_specific
     input type: area 
-    default: I was unable to enter the premises due to the lack of ramps; the only entrance had stairs. I use a wheelchair and therefore could not enter the premises. 
     hint: Please note, this personal account will be included in the letter to the venue.
 progress: 80
 back button: True
